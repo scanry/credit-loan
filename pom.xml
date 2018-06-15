@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.sixliu</groupId>
 	<artifactId>loan</artifactId>
@@ -13,12 +15,12 @@
 		<module>customer-manager</module>
 		<module>order-manager</module>
 		<module>user-manager</module>
-    <module>config-manager</module>
-    <module>account-manager</module>
-    <module>payment-manager</module>
-    <module>notice-manager</module>
-    <module>journal-manager</module>
-  </modules>
+		<module>config-manager</module>
+		<module>account-manager</module>
+		<module>payment-manager</module>
+		<module>notice-manager</module>
+		<module>journal-manager</module>
+	</modules>
 
 	<properties>
 		<java.version>1.8</java.version>
