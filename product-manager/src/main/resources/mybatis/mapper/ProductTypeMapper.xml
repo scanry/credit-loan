@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sixliu.product.repository.ProductTypeDao" >
+    <!-- 产品(product)属性和表字段映射 -->
+    <resultMap id="ProductTypeResult" type="com.sixliu.product.repository.po.ProductType" >
+        <id column="id" property="id" jdbcType="VARCHAR" />
+        <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+        <result column="version" property="version" jdbcType="INTEGER" />
+        <result column="is_deleted" property="deleted" jdbcType="INTEGER" />
+        <result column="owner_id" property="ownerId" jdbcType="VARCHAR" />
+        <result column="update_userId" property="updateUserId" jdbcType="VARCHAR" />
+        <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+        <result column="create_userId" property="createUserId" jdbcType="VARCHAR" />
+        <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    </resultMap>
+    
+    <parameterMap id="ProductTypeParameter" type="com.sixliu.product.repository.po.ProductType" ></parameterMap>
+    
+    <!-- 查询通用列 -->
+    <sql id="select_common_column">
+    	select 
+    		`id`				`id`,
+	        parent_id           `parentId`,
+	        `name`			    `name`,
+	        `remarks`		    `remarks`,
+	        `version`           `version`,
+	        is_deleted          isDeleted,
+	        owner_id  	        ownerId,
+	        update_user_id	    updateUserId,
+	        update_date			`updateDate`,
+	        create_user_id	    createUserId,
+	        create_date			`createDate`
+    </sql>
+    
+     <!-- from 表 -->
+    <sql id="from_product">
+    	from  product_type
+    </sql>
+    
+    <!-- intsert to 表 -->
+    <sql id="insert_common_product">
+    	insert into product_type(id,parent_id,name,remarks,owner_id,update_user_id,create_user_id)
+    </sql>
+
+    <!-- intsert to 表通用列取值 -->
+    <sql id="insert_common_column_value">
+    	values(#{id},#{parentId},#{name},#{remarks},#{ownerId},#{updateUserId},#{createUserId})
+    </sql>
+    
+	<select id="getById" resultMap="ProductTypeResult" >
+		<include refid="select_common_column"></include>
+		<include refid="from_product"></include>
+        where id =#{id}
+    </select>
+    
+    <select id="listAll" resultMap="ProductTypeResult" >
+		<include refid="select_common_column"></include>
+		<include refid="from_product"></include>
+    </select>
+    
+    <insert id="insert" parameterMap="ProductTypeParameter">
+    	<include refid="insert_common_product"></include>
+		<include refid="insert_common_column_value"></include> 
+	</insert>   
+</mapper>
