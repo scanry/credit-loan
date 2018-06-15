@@ -1,4 +1,4 @@
-package com.sixliu.credit.product.repository.po;
+package com.sixliu.credit.common.po;
 
 import java.util.Date;
 

@@ -1,6 +1,8 @@
 package com.sixliu.credit.product.repository.po;
 
 
+import com.sixliu.credit.common.po.BasePo;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

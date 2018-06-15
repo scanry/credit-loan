@@ -2,6 +2,8 @@ package com.sixliu.credit.product.repository.po;
 
 import java.util.Date;
 
+import com.sixliu.credit.common.po.BasePo;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

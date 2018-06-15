@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sixliu.credit.common.dto.Response;
+import com.sixliu.credit.common.dto.ResponseUtils;
 import com.sixliu.credit.product.restful.dto.AppliedProduct;
 import com.sixliu.credit.product.service.ProductManager;
 
@@ -31,8 +33,8 @@ public class ProductManagerRestful {
 	 * @return
 	 */
 	@RequestMapping(value = "/productManager/listForApplied", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-	public List<AppliedProduct> listForAllApplied() {
-		return productManager.listForAllApplied();
+	public Response<List<AppliedProduct>> listForAllApplied() {
+		return ResponseUtils.succeed(productManager.listForAllApplied());
 	}
 
 	/**
