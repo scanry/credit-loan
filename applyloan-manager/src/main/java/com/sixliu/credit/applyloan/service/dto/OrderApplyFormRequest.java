@@ -1,6 +1,7 @@
-package com.sixliu.credit.order.repository.po;
+package com.sixliu.credit.applyloan.service.dto;
 
-import com.sixliu.credit.common.po.BasePo;
+
+import javax.validation.constraints.NotBlank;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -14,12 +15,14 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class OrderApplyForm extends BasePo {
+public class OrderApplyFormRequest{
 
 	/** 客户id:VARCHAR(36) **/
+	@NotBlank(message="the customerId of OrderApplyFormRequest must be not blank")
 	private String customerId;
 
 	/** 产品id:VARCHAR(36) **/
+	@NotBlank(message="the productId of OrderApplyFormRequest must be not blank")
 	private String productId;
 
 	/** 申请额度:INT(11) **/

@@ -16,7 +16,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class ProductApplyFlowNodeConfig extends BasePo {
 
-	/** 所属产品id:VARCHAR(36)**/
-	private String productId;
+	/** 所属流程id:VARCHAR(36)**/
+	private String flowId;
 		
 }

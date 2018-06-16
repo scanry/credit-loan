@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sixliu.credit.common.dto.Response;
 import com.sixliu.credit.common.dto.ResponseUtils;
 import com.sixliu.credit.product.restful.dto.AppliedProduct;
+import com.sixliu.credit.product.restful.dto.ProductApplyPrecheckConfig;
 import com.sixliu.credit.product.service.ProductManager;
 
 /**
@@ -44,6 +45,16 @@ public class ProductManagerRestful {
 	 */
 	@RequestMapping(value = "/productManager/getById", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
 	public AppliedProduct getById(@NotBlank(message = "the supplierName must not be blank") String id) {
+		return null;
+	}
+	
+	/**
+	 * 根据产品id获取产品申请准入配置
+	 * 
+	 * @return
+	 */
+	@RequestMapping(value = "/productManager/getProductApplyPrecheckConfigById", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+	public Response<ProductApplyPrecheckConfig> getProductApplyPrecheckConfigById(@NotBlank(message = "the supplierName must not be blank") String id) {
 		return null;
 	}
 }
