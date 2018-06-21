@@ -14,7 +14,7 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class Subproduct extends Product {
+public class Subproduct extends ProductConfig {
 	
 	/** 父产品id:VARCHAR(36)**/
 	private String parentId;

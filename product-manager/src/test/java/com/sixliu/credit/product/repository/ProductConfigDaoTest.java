@@ -4,7 +4,7 @@ package com.sixliu.credit.product.repository;
 import org.junit.Test;
 
 import com.sixliu.credit.product.BaseTest;
-import com.sixliu.credit.product.repository.ProductDao;
+import com.sixliu.credit.product.repository.ProductConfigDao;
 
 /**
 *@author:MG01867
@@ -13,9 +13,9 @@ import com.sixliu.credit.product.repository.ProductDao;
 *@version:
 *@describe //TODO
 */
-public class ProductDaoTest extends BaseTest {
+public class ProductConfigDaoTest extends BaseTest {
 
-	ProductDao productDao;
+	ProductConfigDao productDao;
 	
 	@Test
 	public void testInsert() {

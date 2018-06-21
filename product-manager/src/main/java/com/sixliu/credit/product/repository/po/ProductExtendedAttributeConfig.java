@@ -1,7 +1,7 @@
 package com.sixliu.credit.product.repository.po;
 
 
-import com.sixliu.credit.common.po.BasePo;
+import com.sixliu.credit.common.po.ExtendedAttributeConfig;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -11,12 +11,10 @@ import lombok.EqualsAndHashCode;
  * @date:2018年6月15日
  * @E-mail:359852326@qq.com
  * @version:
- * @describe 产品扩展配置
+ * @describe 产品扩展属性配置
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ProductExtendConfig extends BasePo {
+public class ProductExtendedAttributeConfig extends ExtendedAttributeConfig{
 	
-	/** 所属产品id:VARCHAR(36)**/
-	private String productId;
 }
