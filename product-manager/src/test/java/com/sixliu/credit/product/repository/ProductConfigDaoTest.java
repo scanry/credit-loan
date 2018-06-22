@@ -4,7 +4,7 @@ package com.sixliu.credit.product.repository;
 import org.junit.Test;
 
 import com.sixliu.credit.product.BaseTest;
-import com.sixliu.credit.product.repository.ProductConfigDao;
+import com.sixliu.credit.product.dao.ProductConfigDao;
 
 /**
 *@author:MG01867

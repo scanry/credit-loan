@@ -1,4 +1,4 @@
-package com.sixliu.credit.product.restful;
+package com.sixliu.credit.product.controller;
 
 import java.util.List;
 
@@ -11,19 +11,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sixliu.credit.common.dto.Response;
 import com.sixliu.credit.common.dto.ResponseUtils;
-import com.sixliu.credit.product.restful.dto.AppliedProduct;
-import com.sixliu.credit.product.restful.dto.ProductApplyPrecheckConfig;
+import com.sixliu.credit.product.dto.AppliedProduct;
+import com.sixliu.credit.product.dto.ProductApplyPrecheckConfig;
+import com.sixliu.credit.product.dto.ProductConfigQuery;
 import com.sixliu.credit.product.service.ProductManager;
 
 /**
  * @author:MG01867
- * @date:2018年6月15日
+ * @date:2018年6月22日
  * @E-mail:359852326@qq.com
  * @version:
- * @describe 产品管理restful接口
+ * @describe 产品配置管理controller
  */
 @RestController
-public class ProductManagerRestful {
+@RequestMapping("/productConfigManager")
+public class ProductConfigManagerController {
 
 	@Autowired
 	private ProductManager productManager;
@@ -33,8 +35,8 @@ public class ProductManagerRestful {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value = "/productManager/listForApplied", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-	public Response<List<AppliedProduct>> listForAllApplied() {
+	@RequestMapping(value = "/pageQuery", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+	public Response<List<AppliedProduct>> pageQuery(ProductConfigQuery productConfigQuery) {
 		return ResponseUtils.succeed(productManager.listForAllApplied());
 	}
 
@@ -43,18 +45,20 @@ public class ProductManagerRestful {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value = "/productManager/getById", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+	@RequestMapping(value = "/getById", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
 	public AppliedProduct getById(@NotBlank(message = "the supplierName must not be blank") String id) {
 		return null;
 	}
-	
+
 	/**
 	 * 根据产品id获取产品申请准入配置
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value = "/productManager/getProductApplyPrecheckConfigById", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-	public Response<ProductApplyPrecheckConfig> getProductApplyPrecheckConfigById(@NotBlank(message = "the supplierName must not be blank") String id) {
+	@RequestMapping(value = "/getProductApplyPrecheckConfigById", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+	public Response<ProductApplyPrecheckConfig> getProductApplyPrecheckConfigById(
+			@NotBlank(message = "the supplierName must not be blank") String id) {
 		return null;
 	}
+
 }

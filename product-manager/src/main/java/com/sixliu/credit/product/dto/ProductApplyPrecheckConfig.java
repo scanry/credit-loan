@@ -1,4 +1,4 @@
-package com.sixliu.credit.product.restful.dto;
+package com.sixliu.credit.product.dto;
 
 /**    
  * @author: sixliu

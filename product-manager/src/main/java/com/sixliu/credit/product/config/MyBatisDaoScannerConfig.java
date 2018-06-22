@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.sixliu.credit.product.repository.BaseDao;
+import com.sixliu.credit.product.dao.BaseDao;
 
 /**
  * @author:MG01867

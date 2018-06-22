@@ -10,8 +10,8 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sixliu.credit.product.BaseTest;
-import com.sixliu.credit.product.repository.ProductTypeDao;
-import com.sixliu.credit.product.repository.po.ProductType;
+import com.sixliu.credit.product.dao.ProductTypeDao;
+import com.sixliu.credit.product.po.ProductType;
 
 /**
  * @author:MG01867

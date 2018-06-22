@@ -1,4 +1,4 @@
-package com.sixliu.credit.product.repository;
+package com.sixliu.credit.product.dao;
 /**
 *@author:MG01867
 *@date:2018年6月15日

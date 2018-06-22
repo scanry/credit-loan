@@ -1,8 +1,8 @@
-package com.sixliu.credit.product.repository;
+package com.sixliu.credit.product.dao;
 
 import java.util.List;
 
-import com.sixliu.credit.product.repository.po.ProductType;
+import com.sixliu.credit.product.po.ProductType;
 
 /**
 *@author:MG01867

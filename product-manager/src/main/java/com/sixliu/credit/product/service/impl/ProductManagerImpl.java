@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.sixliu.credit.product.restful.dto.AppliedProduct;
+import com.sixliu.credit.product.dto.AppliedProduct;
 import com.sixliu.credit.product.service.ProductManager;
 
 /**
