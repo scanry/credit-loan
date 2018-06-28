@@ -1,4 +1,4 @@
-package com.sixliu.credit.product.po;
+package com.sixliu.credit.product.entity;
 
 
 import com.sixliu.credit.common.po.ExtendedAttributeConfig;
@@ -15,6 +15,6 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ProductExtendedAttributeConfig extends ExtendedAttributeConfig{
+public class ProductAttributeConfig extends ExtendedAttributeConfig{
 	
 }

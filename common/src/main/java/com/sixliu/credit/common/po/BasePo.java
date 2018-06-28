@@ -23,9 +23,6 @@ public abstract class BasePo {
 	/**数据版本:INT(11)**/
 	private Integer version;
 	
-	/**是否软删除(1是;0否):INT(1)**/
-	private Integer deleted;
-	
 	/**数据所有者id:VARCHAR(36)**/
 	private String ownerId;
 	

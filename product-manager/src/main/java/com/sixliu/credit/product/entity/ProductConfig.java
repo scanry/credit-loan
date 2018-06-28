@@ -1,4 +1,4 @@
-package com.sixliu.credit.product.po;
+package com.sixliu.credit.product.entity;
 
 import java.util.Date;
 
@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
  * @date:2018年6月15日
  * @E-mail:359852326@qq.com
  * @version:
- * @describe 贷款产品
+ * @describe 贷款产品配置
  * 
  * 贷款产品配置:
  * 	1.基础配置
@@ -30,28 +30,28 @@ public class ProductConfig extends BasePo {
 	private String name;
 	
 	/**产品类型:VARCHAR(36)**/
-	private String productTypeId;
+	private String typeId;
 	
 	/**产品优先级:INT(4)**/
 	private Integer priority;
 	
 	/**是否跟所有产品互斥:INT(1)**/
-	private Boolean applyMutexForAll;
+	private Integer applyMutexForAll;
 	
 	/**是否跟同类型产品互斥:INT(1)**/
-	private Boolean applyMutexForSimilar;
+	private Integer applyMutexForSimilar;
 	
 	/**是否支持申请多次:INT(1)**/
-	private Boolean applyMultiple;
+	private Integer applyMultiple;
 	
 	/**是否循环额度:INT(1)**/
-	private Boolean loopQuota;
+	private Integer loopQuota;
 	
 	/**是否支持提高额度:INT(1)**/
-	private Boolean increaseQuota;
+	private Integer increaseQuota;
 	
 	/**是否支持降低额度:INT(1)**/
-	private Boolean decreaseQuota;
+	private Integer decreaseQuota;
 	
 	/**贷款期限类型:INT(1)**/
 	private Integer loanTermType;

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.sixliu.credit.product.dao.ProductTypeDao" >
     <!-- 产品(product)属性和表字段映射 -->
-    <resultMap id="ProductTypeResult" type="com.sixliu.credit.product.po.ProductType" >
+    <resultMap id="ProductTypeResult" type="com.sixliu.credit.product.entity.ProductType" >
         <id column="id" property="id" jdbcType="VARCHAR" />
         <result column="remarks" property="remarks" jdbcType="VARCHAR" />
         <result column="version" property="version" jdbcType="INTEGER" />
@@ -14,7 +14,7 @@
         <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
     </resultMap>
     
-    <parameterMap id="ProductTypeParameter" type="com.sixliu.credit.product.po.ProductType" ></parameterMap>
+    <parameterMap id="ProductTypeParameter" type="com.sixliu.credit.product.entity.ProductType"/>
     
     <!-- 查询通用列 -->
     <sql id="select_common_column">
@@ -32,8 +32,8 @@
 	        create_date			`createDate`
     </sql>
     
-     <!-- from 表 -->
-    <sql id="from_product">
+    <!-- from 表 -->
+    <sql id="from_table">
     	from  product_type
     </sql>
     
@@ -49,13 +49,13 @@
     
 	<select id="getById" resultMap="ProductTypeResult" >
 		<include refid="select_common_column"></include>
-		<include refid="from_product"></include>
+		<include refid="from_table"></include>
         where id =#{id}
     </select>
     
     <select id="listAll" resultMap="ProductTypeResult" >
 		<include refid="select_common_column"></include>
-		<include refid="from_product"></include>
+		<include refid="from_table"></include>
     </select>
     
     <insert id="insert" parameterMap="ProductTypeParameter">

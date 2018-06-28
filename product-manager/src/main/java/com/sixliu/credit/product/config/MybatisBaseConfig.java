@@ -39,7 +39,7 @@ public class MybatisBaseConfig implements TransactionManagementConfigurer {
 	private DataSource dataSource;
 
 	@Bean(name = "sqlSessionFactory")
-	public SqlSessionFactory adminSqlSessionFactoryBean() {
+	public SqlSessionFactory sqlSessionFactoryBean() {
 		log.debug("start configruing mybatis");
 		SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
 		bean.setDataSource(dataSource);

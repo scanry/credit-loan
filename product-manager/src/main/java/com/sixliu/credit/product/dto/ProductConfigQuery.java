@@ -14,7 +14,7 @@ import lombok.EqualsAndHashCode;
 */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ProductConfigQuery extends PageQueryRequest<ProductConfig>{
+public class ProductConfigQuery extends PageQueryRequest<ProductConfigDto>{
 
 	private String productName;
 	private String productType;

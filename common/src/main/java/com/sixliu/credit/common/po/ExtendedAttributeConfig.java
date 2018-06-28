@@ -18,7 +18,7 @@ import lombok.EqualsAndHashCode;
 public class ExtendedAttributeConfig extends BasePo {
 	
 	/** 所属者id:VARCHAR(36)**/
-	private String ownerEntityId;
+	private String ownerId;
 	
 	/**是否有效:INT(1)**/
 	private Integer takeEffect;

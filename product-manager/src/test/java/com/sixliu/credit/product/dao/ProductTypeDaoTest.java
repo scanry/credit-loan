@@ -1,4 +1,4 @@
-package com.sixliu.credit.product.repository;
+package com.sixliu.credit.product.dao;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sixliu.credit.product.BaseTest;
 import com.sixliu.credit.product.dao.ProductTypeDao;
-import com.sixliu.credit.product.po.ProductType;
+import com.sixliu.credit.product.entity.ProductType;
 
 /**
  * @author:MG01867

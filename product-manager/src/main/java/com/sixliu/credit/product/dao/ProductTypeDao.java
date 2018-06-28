@@ -2,7 +2,7 @@ package com.sixliu.credit.product.dao;
 
 import java.util.List;
 
-import com.sixliu.credit.product.po.ProductType;
+import com.sixliu.credit.product.entity.ProductType;
 
 /**
 *@author:MG01867

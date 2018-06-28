@@ -3,6 +3,7 @@ package com.sixliu.credit.product.service;
 import java.util.List;
 
 import com.sixliu.credit.product.dto.AppliedProduct;
+import com.sixliu.credit.product.entity.ProductConfig;
 
 /**
 *@author:MG01867
@@ -11,7 +12,11 @@ import com.sixliu.credit.product.dto.AppliedProduct;
 *@version:
 *@describe //TODO
 */
-public interface ProductManager {
+public interface ProductConfigService {
 
+	ProductConfig getById(String id);
+	
+	ProductConfig getByCode(String code);
+	
 	List<AppliedProduct> listForAllApplied();
 }

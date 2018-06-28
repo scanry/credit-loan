@@ -6,6 +6,6 @@ package com.sixliu.credit.product.dto;
 *@version:
 *@describe //TODO
 */
-public class ProductConfig {
+public class ProductConfigDto {
 
 }

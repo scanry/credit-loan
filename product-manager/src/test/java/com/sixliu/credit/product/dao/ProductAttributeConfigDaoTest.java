@@ -6,6 +6,6 @@ package com.sixliu.credit.product.dao;
 *@version:
 *@describe //TODO
 */
-public interface BaseDao {
+public class ProductAttributeConfigDaoTest {
 
 }

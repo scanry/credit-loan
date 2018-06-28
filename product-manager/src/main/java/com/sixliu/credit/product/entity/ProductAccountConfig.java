@@ -1,4 +1,4 @@
-package com.sixliu.credit.product.po;
+package com.sixliu.credit.product.entity;
 
 import com.sixliu.credit.common.po.BasePo;
 
