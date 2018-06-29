@@ -17,7 +17,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @SpringBootApplication
 public class StartUp implements WebMvcConfigurer {
 
-	final static Logger log = LoggerFactory.getLogger(StartUpTest.class);
+	final static Logger log = LoggerFactory.getLogger(StartUp.class);
 
 	static {
 		/** 设置jetty maxFormContentSize 默认为10M **/
@@ -25,7 +25,7 @@ public class StartUp implements WebMvcConfigurer {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(StartUpTest.class);
+		SpringApplication.run(StartUp.class);
 	}
 
 	/**

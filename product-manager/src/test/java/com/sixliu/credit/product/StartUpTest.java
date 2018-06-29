@@ -13,11 +13,6 @@ public class StartUpTest extends BaseTest {
 
 	@Test
 	public void test() {
-//		synchronized (this) {
-//			try {
-//				wait();
-//			} catch (InterruptedException e) {
-//			}
-//		}
+		
 	}
 }
