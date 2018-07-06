@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sixliu.credit.product.dao.ProductConfigDao;
-import com.sixliu.credit.product.dto.AppliedProduct;
+import com.sixliu.credit.product.dto.ProductDTO;
 import com.sixliu.credit.product.entity.ProductConfig;
 import com.sixliu.credit.product.service.ProductConfigService;
 
@@ -28,7 +28,7 @@ public class ProductConfigServiceImpl implements ProductConfigService{
 	private ProductConfigDao productConfigDao;
 	
 	@Override
-	public List<AppliedProduct> listForAllApplied() {
+	public List<ProductDTO> listForAllApplied() {
 		return null;
 	}
 

@@ -1,5 +1,7 @@
 package com.sixliu.credit.product.dto;
 
+import java.util.Date;
+
 import com.sixliu.credit.common.dto.PageQueryRequest;
 
 import lombok.Data;
@@ -14,8 +16,11 @@ import lombok.EqualsAndHashCode;
 */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ProductConfigQuery extends PageQueryRequest<ProductConfigDto>{
+public class ProductQueryDTO extends PageQueryRequest<ProductDTO>{
 
-	private String productName;
-	private String productType;
+	private String name;
+	private String type;
+	private Date effectiveDate;
+	private Date expireDate;
+	private Boolean effective;
 }

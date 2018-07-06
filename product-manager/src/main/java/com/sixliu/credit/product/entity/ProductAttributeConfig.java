@@ -1,7 +1,7 @@
 package com.sixliu.credit.product.entity;
 
 
-import com.sixliu.credit.common.po.ExtendedAttributeConfig;
+import com.sixliu.credit.common.entity.ExtendedAttributeConfig;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

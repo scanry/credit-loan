@@ -1,7 +1,7 @@
-package com.sixliu.credit.common.po;
+package com.sixliu.credit.common.entity;
 
 
-import com.sixliu.credit.common.po.BasePo;
+import com.sixliu.credit.common.entity.BaseEntity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -15,7 +15,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ExtendedAttributeConfig extends BasePo {
+public class ExtendedAttributeConfig extends BaseEntity {
 	
 	/** 所属者id:VARCHAR(36)**/
 	private String ownerId;

@@ -1,4 +1,4 @@
-package com.sixliu.credit.common.po;
+package com.sixliu.credit.common.entity;
 
 import java.util.Date;
 
@@ -12,7 +12,7 @@ import lombok.Data;
  * @describe 基础po
  */
 @Data
-public abstract class BasePo {
+public abstract class BaseEntity {
 
 	/**数据id业务无关性:VARCHAR(36)**/
 	private String id;

@@ -1,6 +1,6 @@
 package com.sixliu.credit.product.entity;
 
-import com.sixliu.credit.common.po.BasePo;
+import com.sixliu.credit.common.entity.BaseEntity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -14,10 +14,10 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ProductType extends BasePo {
+public class ProductType extends BaseEntity {
 
 	/** 产品父类型数据id:VARCHAR(36)**/
-	private Long parentId;
+	private String parentId;
 	/** 产品类型名称:VARCHAR(20)**/
 	private String name;
 }

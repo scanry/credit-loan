@@ -1,6 +1,6 @@
 package com.sixliu.credit.product.entity;
 
-import com.sixliu.credit.common.po.BasePo;
+import com.sixliu.credit.common.entity.BaseEntity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -14,7 +14,7 @@ import lombok.EqualsAndHashCode;
 */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ProductApplyFlowNodeConfig extends BasePo {
+public class ProductApplyFlowNodeConfig extends BaseEntity {
 
 	/** 所属流程id:VARCHAR(36)**/
 	private String flowId;

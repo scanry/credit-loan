@@ -1,6 +1,6 @@
 package com.sixliu.credit.order.repository.po;
 
-import com.sixliu.credit.common.po.BasePo;
+import com.sixliu.credit.common.entity.BaseEntity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -14,7 +14,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class OrderApplyForm extends BasePo {
+public class OrderApplyForm extends BaseEntity {
 
 	/** 客户id:VARCHAR(36) **/
 	private String customerId;

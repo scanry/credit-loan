@@ -23,6 +23,7 @@
 		<module>operate-manager</module>
 		<module>fund-manager</module>
 		<module>common</module>
+    <module>flow</module>
   </modules>
 
 	<properties>

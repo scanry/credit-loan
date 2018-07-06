@@ -2,7 +2,7 @@ package com.sixliu.credit.product.entity;
 
 import java.util.Date;
 
-import com.sixliu.credit.common.po.BasePo;
+import com.sixliu.credit.common.entity.BaseEntity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -21,7 +21,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ProductConfig extends BasePo {
+public class ProductConfig extends BaseEntity {
 
 	/**产品编码:VARCHAR(20)**/
 	private String code;

@@ -1,6 +1,6 @@
 package com.sixliu.credit.product.entity;
 
-import com.sixliu.credit.common.po.BasePo;
+import com.sixliu.credit.common.entity.BaseEntity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -15,6 +15,6 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ProductApplyPrecheckConfig extends BasePo {
+public class ProductApplyPrecheckConfig extends BaseEntity {
 	
 }
