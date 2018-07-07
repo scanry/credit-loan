@@ -6,7 +6,7 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
 
 
-import com.sixliu.credit.common.dto.BaseDTO;
+import com.sixliu.credit.common.dto.BaseWriteDTO;
 import com.sixliu.credit.common.validation.LoanAmountValidation;
 import com.sixliu.credit.common.validation.LoanTermTypeValidation;
 
@@ -22,7 +22,7 @@ import lombok.EqualsAndHashCode;
 */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class OrderApplyFormDTO extends BaseDTO{
+public class OrderApplyFormDTO extends BaseWriteDTO{
 
 	/**客户id**/
 	@NotBlank(message = "the customerId must not be blank")

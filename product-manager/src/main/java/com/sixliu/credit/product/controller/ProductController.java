@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +24,7 @@ import com.sixliu.credit.product.service.ProductService;
  * @describe 产品服务controller,面向客户
  */
 @RestController
-@RequestMapping("/productConfig")
+@RequestMapping("/product")
 public class ProductController {
 
 	@Autowired
@@ -33,7 +35,7 @@ public class ProductController {
 	 * @return
 	 */
 	@RequestMapping(value = "/query", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-	public Response<List<ProductDTO>> query(ProductQueryDTO productConfigQuery) {
+	public Response<List<ProductDTO>> query(@RequestBody @Validated ProductQueryDTO productConfigQuery) {
 		productConfigQuery.setEffective(true);
 		Date nowDate=new Date();
 		productConfigQuery.setEffectiveDate(nowDate);

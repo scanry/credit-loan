@@ -4,8 +4,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import com.sixliu.credit.common.CommonBasePackage;
 
 /**
  * @author:MG01867
@@ -14,6 +17,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @version:
  * @describe //TODO
  */
+@ComponentScan(basePackageClasses = { StartUp.class, CommonBasePackage.class })
 @SpringBootApplication
 public class StartUp implements WebMvcConfigurer {
 

@@ -1,7 +1,7 @@
 package com.sixliu.credit.order.dto;
 
 
-import com.sixliu.credit.common.dto.BaseDTO;
+import com.sixliu.credit.common.dto.BaseWriteDTO;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -15,7 +15,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class OrderReviewTaskResultDTO extends BaseDTO {
+public class OrderReviewTaskResultDTO extends BaseWriteDTO {
 	
 	private String taskId;
 	private String userId;
