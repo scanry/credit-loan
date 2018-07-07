@@ -20,7 +20,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = StartUp.class,webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-public abstract class BaseTest extends AbstractJUnit4SpringContextTests {
+public abstract class BaseTest extends AbstractJUnit4SpringContextTests{
 	
 	protected static final Logger log = LoggerFactory.getLogger(BaseTest.class);
 	

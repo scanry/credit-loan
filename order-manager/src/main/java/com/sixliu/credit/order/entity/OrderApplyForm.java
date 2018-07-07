@@ -1,4 +1,4 @@
-package com.sixliu.credit.order.repository.po;
+package com.sixliu.credit.order.entity;
 
 import com.sixliu.credit.common.entity.BaseEntity;
 

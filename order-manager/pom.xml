@@ -21,6 +21,13 @@
 			<artifactId>common</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.sixliu</groupId>
+			<artifactId>flow</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -30,30 +37,15 @@
 					<artifactId>spring-boot-starter-tomcat</artifactId>
 				</exclusion>
 				<exclusion>
-					<groupId>org.hibernate</groupId>
-					<artifactId>hibernate-validator</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.hibernate.validator</groupId>
-					<artifactId>hibernate-validator</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>log4j-over-slf4j</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>ch.qos.logback</groupId>
-					<artifactId>logback-core</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>ch.qos.logback</groupId>
-					<artifactId>logback-classic</artifactId>
-				</exclusion>
-				<exclusion>
 					<groupId>com.fasterxml.jackson.core</groupId>
 					<artifactId>jackson-databind</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jetty</artifactId>
 		</dependency>
 
 		<dependency>
@@ -71,23 +63,18 @@
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>com.zaxxer</groupId>
+					<artifactId>HikariCP</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
 		</dependency>
 		<!-- db mybatis -->
-
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate.validator</groupId>
-			<artifactId>hibernate-validator</artifactId>
-		</dependency>
-
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

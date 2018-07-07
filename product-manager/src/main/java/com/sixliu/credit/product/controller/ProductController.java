@@ -19,7 +19,7 @@ import com.sixliu.credit.product.service.ProductService;
  * @date:2018年6月22日
  * @E-mail:359852326@qq.com
  * @version:
- * @describe 产品服务controller
+ * @describe 产品服务controller,面向客户
  */
 @RestController
 @RequestMapping("/productConfig")

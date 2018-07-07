@@ -1,6 +1,6 @@
 package com.sixliu.flow.service;
 
-import com.sixliu.flow.TaskStatus;
+import com.sixliu.flow.ReviewResult;
 
 /**
 *@author:MG01867
@@ -9,14 +9,44 @@ import com.sixliu.flow.TaskStatus;
 *@version:
 *@describe //TODO
 */
-public class FlowService {
+public interface FlowService {
 
 	
-	public void create(String jobName,String flowModel) {
-		
-	}
+	/**
+	 * 创建流程作业
+	 * @param flowModel
+	 * @return
+	 */
+	String createFlowJob(String flowModel);
 	
-	public void submit(String jobName,String taskName,TaskStatus taskStatus) {
-		
-	}
+	/**
+	 * 获取待处理订单审核流程任务
+	 * 
+	 * @param userId
+	 */
+	void listPendingReviewTask(String userId);
+
+	/**
+	 * 认领待处理订单审核流程任务
+	 * 
+	 * @param userId
+	 * @param taskId
+	 */
+	void claimReviewTask(String userId, String taskId);
+
+	/**
+	 * 自动认领待处理订单审核流程任务
+	 * 
+	 * @param userId
+	 * @param taskId
+	 */
+	void automaticClaimReviewTask(String userId);
+
+	/**
+	 * 提交订单审核流程任务处理结果
+	 * 
+	 * @param result
+	 *            订单审核流程任务处理结果
+	 */
+	void submitReviewTaskResult(ReviewResult result);
 }

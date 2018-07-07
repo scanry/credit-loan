@@ -1,4 +1,4 @@
-package com.sixliu.credit.product;
+package com.sixliu.credit.order;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.sixliu.credit.order.repository;
+package com.sixliu.credit.order.dao;
 /**
 *@author:MG01867
 *@date:2018年6月15日

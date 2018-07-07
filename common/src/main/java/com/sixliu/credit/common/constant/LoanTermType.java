@@ -20,16 +20,16 @@ public class LoanTermType {
 	/** 无固定期 **/
 	public static final int NON_FIXED_PERIOD = 5;
 
+
 	/**
 	 * 检查贷款期限类型值是否合法
-	 * 
 	 * @param loanTermType
 	 * @return
 	 */
-	public static int check(int loanTermType) {
+	public static boolean check(int loanTermType) {
 		if (loanTermType < DAY || loanTermType > NON_FIXED_PERIOD) {
-			throw new IllegalArgumentException(String.format("the loanTermType[%s] is illegal", loanTermType));
+			return false;
 		}
-		return loanTermType;
+		return true;
 	}
 }
