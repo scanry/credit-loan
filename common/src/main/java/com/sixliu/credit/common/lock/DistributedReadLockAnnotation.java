@@ -21,6 +21,6 @@ public @interface DistributedReadLockAnnotation {
 
 	Class<? extends GetStampHandler> GetStampHandlerClass();
 	
-	boolean readLock()default false;
+	long tryLockTime()default 0;
 
 }
