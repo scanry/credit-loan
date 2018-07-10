@@ -13,6 +13,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.annotation.AnnotationUtils;
+import org.springframework.expression.Expression;
+import org.springframework.expression.ExpressionParser;
+import org.springframework.expression.spel.standard.SpelExpressionParser;
 
 import com.sixliu.credit.common.exception.SystemAppException;
 
@@ -32,34 +35,53 @@ public abstract class AbstractDistributedLockAop {
 
 	private DistributedLockFactory distributedLockFactory;
 
-	private static Map<Class<? extends GetStampHandler>, GetStampHandler> cache = new HashMap<>();
+	private static Map<DistributedWriteLock, GetStampHandler> cache = new HashMap<>();
 	private static WeakHashMap<String, DistributedLock> lockCache = new WeakHashMap<>();
+	private static ExpressionParser expressionParser = new SpelExpressionParser();
 
-	protected GetStampHandler getGetStampHandler(Class<? extends GetStampHandler> clz) {
-		GetStampHandler getStampHandler = cache.get(clz);
+	private interface GetStampHandler {
+		String getStamp(Object[] args);
+	}
+
+	protected String getStamp(ProceedingJoinPoint joinPoint) {
+		MethodSignature joinPointObject = (MethodSignature) joinPoint.getSignature();
+		Method method = joinPointObject.getMethod();
+		DistributedWriteLock annotation = AnnotationUtils.findAnnotation(method, DistributedWriteLock.class);
+		GetStampHandler getStampHandler = cache.get(annotation);
 		if (null == getStampHandler) {
 			synchronized (cache) {
-				getStampHandler = cache.get(clz);
+				getStampHandler = cache.get(annotation);
 				if (null == getStampHandler) {
-					try {
-						getStampHandler = clz.newInstance();
-						cache.put(clz, getStampHandler);
-					} catch (Exception exception) {
-						throw new SystemAppException(exception);
+					Object[] args = joinPoint.getArgs();
+					if (null != args && args.length == 1&&args[0] instanceof String) {
+						getStampHandler = new GetStampHandler() {
+
+							@Override
+							public String getStamp(Object[] args) {
+								return (String) args[0];
+							}
+						};
+					} else if (!"".equals(annotation.keyExpression())) {
+						Expression expression = expressionParser.parseExpression(annotation.keyExpression());
+						getStampHandler = new GetStampHandler() {
+							@Override
+							public String getStamp(Object[] args) {
+								return (String) expression.getValue(args);
+							}
+						};
 					}
+					if (null == getStampHandler) {
+						throw new SystemAppException("the distributedLock is unsupport");
+					}
+					cache.put(annotation, getStampHandler);
 				}
 			}
 		}
-		return getStampHandler;
+		return getStampHandler.getStamp(joinPoint.getArgs());
 	}
 
 	protected DistributedLock getDistributedLock(ProceedingJoinPoint joinPoint) {
-		MethodSignature joinPointObject = (MethodSignature) joinPoint.getSignature();
-		Method method = joinPointObject.getMethod();
-		DistributedWriteLockAnnotation annotation = AnnotationUtils.findAnnotation(method,
-				DistributedWriteLockAnnotation.class);
-		GetStampHandler getStampHandler = getGetStampHandler(annotation.GetStampHandlerClass());
-		String stamp = getStampHandler.getStamp(joinPoint.getArgs());
+		String stamp = getStamp(joinPoint);
 		DistributedLock distributedLock = lockCache.get(stamp);
 		if (null == distributedLock) {
 			synchronized (lockCache) {

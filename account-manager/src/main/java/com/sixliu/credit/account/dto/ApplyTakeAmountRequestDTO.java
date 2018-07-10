@@ -1,16 +1,20 @@
 package com.sixliu.credit.account.dto;
 
+import com.sixliu.credit.common.dto.BaseWriteDTO;
+
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
 *@author:MG01867
 *@date:2018年7月5日
 *@E-mail:359852326@qq.com
 *@version:
-*@describe 取款请求
+*@describe 申请取款请求
 */
 @Data
-public class DrawMoneyApplyRequest {
+@EqualsAndHashCode(callSuper = false)
+public class ApplyTakeAmountRequestDTO extends BaseWriteDTO{
 
 	/**取款账户id**/
 	private String accountId;

@@ -6,6 +6,6 @@ package com.sixliu.credit.account.dto;
 *@version:
 *@describe //TODO
 */
-public class DrawMoneyConfirm {
+public class ConfirmTransactionDTO {
 
 }

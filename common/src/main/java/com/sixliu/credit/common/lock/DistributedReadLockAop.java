@@ -18,7 +18,7 @@ import com.sixliu.credit.common.exception.SystemAppException;
 @Component
 public class DistributedReadLockAop extends AbstractDistributedLockAop {
 
-	@Around("@annotation(com.sixliu.credit.common.lock.DistributedReadLockAnnotation)")
+	@Around("@annotation(com.sixliu.credit.common.lock.DistributedReadLock)")
 	public void aop(ProceedingJoinPoint joinPoint) {
 		DistributedLock distributedLock = null;
 		try {

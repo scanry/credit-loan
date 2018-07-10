@@ -17,10 +17,9 @@ import java.lang.annotation.Target;
 @Documented
 @Target({ METHOD })
 @Retention(RUNTIME)
-public @interface DistributedWriteLockAnnotation {
+public @interface DistributedWriteLock {
 
-	Class<? extends GetStampHandler> GetStampHandlerClass();
-	
-	long tryLockTime()default 0;
+	long tryLockTime() default 0;
 
+	String keyExpression() default "";
 }

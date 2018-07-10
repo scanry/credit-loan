@@ -1,9 +1,11 @@
 package com.sixliu.credit.account.service;
 
-import com.sixliu.credit.account.dto.DrawMoneyApplyRequest;
-import com.sixliu.credit.account.dto.DrawMoneyApplyResult;
-import com.sixliu.credit.account.dto.DrawMoneyConfirm;
-import com.sixliu.credit.account.dto.DrawMoneyResult;
+import com.sixliu.credit.account.dto.ApplyTakeAmountRequestDTO;
+import com.sixliu.credit.account.dto.ApplyTakeAmountResultDTO;
+import com.sixliu.credit.account.dto.ConfirmTransactionDTO;
+import com.sixliu.credit.account.dto.DepositRequestDTO;
+import com.sixliu.credit.account.dto.DepositResultDTO;
+import com.sixliu.credit.account.dto.TransferResultDTO;
 
 /**
  * @author:MG01867
@@ -16,31 +18,41 @@ public interface TransactionService {
 
 	/**
 	 * 申请取款
+	 * 
 	 * @param request
 	 * @return
 	 */
-	DrawMoneyApplyResult applyDrawMoney(DrawMoneyApplyRequest request);
-	
-	
+	ApplyTakeAmountResultDTO applyTakeAmount(ApplyTakeAmountRequestDTO request);
+
 	/**
-	 * 确认取款
+	 * 转账
+	 * 
 	 * @param request
 	 * @return
 	 */
-	void confirmDrawMoney(DrawMoneyConfirm drawMoneyConfirm);
-	
+	ApplyTakeAmountResultDTO transferAccounts(ApplyTakeAmountRequestDTO request);
+
 	/**
-	 * 查询取款结果
+	 * 确认交易
+	 * 
+	 * @param request
+	 * @return
+	 */
+	String confirmTransaction(ConfirmTransactionDTO drawMoneyConfirm);
+
+	/**
+	 * 存款
+	 * 
+	 * @param DepositDTO
+	 * @return
+	 */
+	DepositResultDTO deposit(DepositRequestDTO DepositDTO);
+
+	/**
+	 * 查询交易结果
+	 * 
 	 * @param requestId
 	 * @return
 	 */
-	DrawMoneyResult queryDrawMoney(String requestId);
-	
-
-	/**
-	 * 还款
-	 * @param accountId
-	 * @param amount
-	 */
-	void repayment(String accountId,double amount);
+	TransferResultDTO queryTransferResult(String transferId);
 }

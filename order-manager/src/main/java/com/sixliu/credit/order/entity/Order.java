@@ -35,4 +35,7 @@ public class Order extends BaseEntity{
 	/**推荐人id**/
 	private String referenceId;
 	
+	/**审批流程作业id**/
+	private String flowJobId;
+	
 }

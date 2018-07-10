@@ -8,19 +8,19 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 /**
-*@author:MG01867
-*@date:2018年7月7日
-*@E-mail:359852326@qq.com
-*@version:
-*@describe //TODO
-*/
+ * @author:MG01867
+ * @date:2018年7月7日
+ * @E-mail:359852326@qq.com
+ * @version:
+ * @describe //TODO
+ */
 @Documented
 @Target({ METHOD })
 @Retention(RUNTIME)
-public @interface DistributedReadLockAnnotation {
+public @interface DistributedReadLock {
 
-	Class<? extends GetStampHandler> GetStampHandlerClass();
-	
-	long tryLockTime()default 0;
+	long tryLockTime() default 0;
+
+	String stampGetExpression() default "";
 
 }

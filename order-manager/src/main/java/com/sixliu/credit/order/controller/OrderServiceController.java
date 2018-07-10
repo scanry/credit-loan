@@ -31,4 +31,10 @@ public class OrderServiceController {
 	public Response<String> apply(@RequestBody @Validated OrderApplyFormDTO orderApplyForm) {
 		return ResponseUtils.succeed(orderService.apply(orderApplyForm));
 	}
+	
+	@RequestMapping(value = "/cancel", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+	public Response<Void> cancel(@RequestBody @Validated OrderApplyFormDTO orderApplyForm) {
+		orderService.cancel(orderApplyForm.getCustomerId());
+		return ResponseUtils.succeed();
+	}
 }

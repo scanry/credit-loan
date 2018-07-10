@@ -49,4 +49,6 @@ public interface FlowService {
 	 *            订单审核流程任务处理结果
 	 */
 	void submitReviewTaskResult(ReviewResult result);
+	
+	void cancelFlowJob(String jobId);
 }
