@@ -51,7 +51,10 @@ public class OrderServiceImpl implements OrderService {
 	 * 3.并发申请兼容性检查
 	 * 4.已经通过的贷款申请兼容性检查
 	 * 5.客户基础额度检查
-	 * 6.产品基础额度检查
+	 * 6.渠道基础额度检查
+	 * 7.产品基础额度检查
+	 * 
+	 * 
 	 */
 	@Override
 	public String apply(OrderApplyFormDTO orderApplyForm) {
