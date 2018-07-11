@@ -21,5 +21,7 @@ public @interface DistributedWriteLock {
 
 	long tryLockTime() default 0;
 
+	String namespace();
+	
 	String keyExpression() default "";
 }

@@ -51,7 +51,7 @@ public class OrderServiceImpl implements OrderService {
 	 * 
 	 * 
 	 */
-	@DistributedWriteLock(keyExpression ="[0].customerId")
+	@DistributedWriteLock(namespace="",keyExpression ="[0].customerId")
 	@Override
 	public String apply(OrderApplyFormDTO orderApplyForm) {
 		Response<String> customerResponse = customerClient.get(orderApplyForm.getCustomerId());
@@ -81,7 +81,7 @@ public class OrderServiceImpl implements OrderService {
 		return orderDao.listOrderByCustomerId(customerId);
 	}
 
-	@DistributedWriteLock(tryLockTime = 3000)
+	@DistributedWriteLock(namespace="",tryLockTime = 3000)
 	@Override
 	public void cancel(String orderId) {
 		Order order = orderDao.getOrderById(orderId);
