@@ -1,5 +1,7 @@
 package com.sixliu.credit.account.entity;
 
+import java.util.Date;
+
 import com.sixliu.credit.common.entity.BaseEntity;
 
 import lombok.Data;
@@ -16,15 +18,18 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class Account extends BaseEntity {
 
+	/** 账户类型 **/
+	private Integer type;
+	
+	/** 账户状态 **/
+	private Integer status;
+	
 	/** 交易密码 **/
 	private String transactPassword;
 
 	/** 货币类型 **/
 	private Integer currencyType;
 	
-	/** 账户状态 **/
-	private Integer status;
-
 	/** 授信金额 **/
 	private Double creditAmount;
 
@@ -39,5 +44,8 @@ public class Account extends BaseEntity {
 
 	/** 已使用金额+=已使用金额 **/
 	private Double usedAmount;
+	
+	/** 过期日期 **/
+	private Date expireDate;
 	
 }

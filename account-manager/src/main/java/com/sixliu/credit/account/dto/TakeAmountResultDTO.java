@@ -6,6 +6,6 @@ package com.sixliu.credit.account.dto;
 *@version:
 *@describe //TODO
 */
-public class ApplyTakeAmountResultDTO {
+public class TakeAmountResultDTO {
 
 }

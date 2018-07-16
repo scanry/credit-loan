@@ -14,7 +14,7 @@ import lombok.EqualsAndHashCode;
 */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ApplyTakeAmountRequestDTO extends BaseWriteDTO{
+public class TakeAmountDTO extends BaseWriteDTO{
 
 	/**取款账户id**/
 	private String accountId;

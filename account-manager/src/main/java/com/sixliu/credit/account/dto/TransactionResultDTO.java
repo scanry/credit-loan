@@ -14,6 +14,9 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class TransferResultDTO extends BaseWriteDTO {
+public class TransactionResultDTO extends BaseWriteDTO {
+	
 	private String transferId;
+	private boolean result;
+	private String notice;
 }
