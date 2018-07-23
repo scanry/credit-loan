@@ -18,6 +18,7 @@ public enum TaskStatus {
 
 	/** 待认领 **/
 	POOLING() {
+		@Override
 		public FlowTask process(@NonNull FlowJob flowJob, @NonNull FlowTask flowTask,
 				@NonNull ApprovalResult approvalResult, @NonNull FlowTaskModelGetter flowTaskModelGetter) {
 			if (PENDING != approvalResult.getStatus()) {
@@ -32,6 +33,7 @@ public enum TaskStatus {
 	},
 	/** 待处理 **/
 	PENDING() {
+		@Override
 		public FlowTask process(@NonNull FlowJob flowJob, @NonNull FlowTask flowTask,
 				@NonNull ApprovalResult approvalResult, @NonNull FlowTaskModelGetter flowTaskModelGetter) {
 			TaskStatus next = approvalResult.getStatus();
@@ -58,7 +60,7 @@ public enum TaskStatus {
 				if (null == overruleflowTaskModel) {
 					throw new IllegalArgumentException("the ");
 				}
-				if (overruleflowTaskModel.getPhase() >= flowTask.getPhase()) {
+				if (overruleflowTaskModel.getPhase() >flowTask.getPhase()) {
 					throw new IllegalArgumentException("the ");
 				}
 				nextFlowTask = FlowUtils.newFlowTask(overruleflowTaskModel, flowTask.getFlowJobId(),
@@ -78,6 +80,7 @@ public enum TaskStatus {
 	},
 	/** 通过 **/
 	PASS() {
+		@Override
 		public FlowTask process(@NonNull FlowJob flowJob, @NonNull FlowTask flowTask,
 				@NonNull ApprovalResult approvalResult, @NonNull FlowTaskModelGetter flowTaskModelGetter) {
 			throw new UnsupportedOperationException(
@@ -87,6 +90,7 @@ public enum TaskStatus {
 	},
 	/** 拒绝 **/
 	REJECT() {
+		@Override
 		public FlowTask process(@NonNull FlowJob flowJob, @NonNull FlowTask flowTask,
 				@NonNull ApprovalResult approvalResult, @NonNull FlowTaskModelGetter flowTaskModelGetter) {
 			throw new UnsupportedOperationException(
@@ -96,6 +100,7 @@ public enum TaskStatus {
 	},
 	/** 挂起 **/
 	HANG_UP() {
+		@Override
 		public FlowTask process(@NonNull FlowJob flowJob, @NonNull FlowTask flowTask,
 				@NonNull ApprovalResult approvalResult, @NonNull FlowTaskModelGetter getNextFlowTaskModel) {
 			TaskStatus next = approvalResult.getStatus();
@@ -107,6 +112,7 @@ public enum TaskStatus {
 	},
 	/** 驳回 **/
 	OVERRULE() {
+		@Override
 		public FlowTask process(@NonNull FlowJob flowJob, @NonNull FlowTask flowTask,
 				@NonNull ApprovalResult approvalResult, @NonNull FlowTaskModelGetter getNextFlowTaskModel) {
 			throw new UnsupportedOperationException(
