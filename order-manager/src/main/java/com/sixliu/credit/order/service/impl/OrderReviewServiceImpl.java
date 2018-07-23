@@ -1,9 +1,12 @@
 package com.sixliu.credit.order.service.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.sixliu.credit.order.service.OrderReviewService;
-import com.sixliu.flow.ReviewResult;
+import com.sixliu.flow.entity.FlowTask;
+import com.sixliu.flow.service.ApprovalResult;
 
 /**
 *@author:MG01867
@@ -16,31 +19,31 @@ import com.sixliu.flow.ReviewResult;
 public class OrderReviewServiceImpl implements OrderReviewService{
 
 	@Override
-	public String createFlowJob(String flowModel) {
+	public String createFlowJob(String flowModelId, String userId, String channel) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void listPendingReviewTask(String userId) {
+	public List<FlowTask> listFlowTaskFromPool(String userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void receiveFlowTask(String userId, String taskId) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void claimReviewTask(String userId, String taskId) {
+	public void autoReceiveFlowTask(String userId) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void automaticClaimReviewTask(String userId) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void submitReviewTaskResult(ReviewResult result) {
+	public void submitApprovalResult(ApprovalResult approvalResult) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -50,5 +53,7 @@ public class OrderReviewServiceImpl implements OrderReviewService{
 		// TODO Auto-generated method stub
 		
 	}
+
+
 
 }

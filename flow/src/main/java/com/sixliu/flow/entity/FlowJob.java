@@ -1,4 +1,4 @@
-package com.sixliu.flow;
+package com.sixliu.flow.entity;
 
 
 import java.util.Date;
@@ -15,18 +15,25 @@ import lombok.Data;
 @Data
 public class FlowJob {
 
+	/**流程作业id**/
+	private String id;
+	
 	/**流程作业名称**/
 	private String name;
+	
+	/**流程作业名称**/
+	private String flowJobModelId;
 	
 	/**流程作业状态**/
 	private JobStatus status;
 	
-	/**流程作业所处阶段**/
-	private int phase;
+	/**流程作业创建用户**/
+	private String createUserId;
 	
 	/**流程作业开始时间**/
 	private Date startDate;
 	
 	/**流程作业结束时间**/
 	private Date endDate;
+	
 }

@@ -1,6 +1,8 @@
 package com.sixliu.flow.service;
 
-import com.sixliu.flow.ReviewResult;
+import java.util.List;
+
+import com.sixliu.flow.entity.FlowTask;
 
 /**
 *@author:MG01867
@@ -14,17 +16,19 @@ public interface FlowService {
 	
 	/**
 	 * 创建流程作业
-	 * @param flowModel
+	 * @param flowModelId
+	 * @param userId
+	 * @param channel
 	 * @return
 	 */
-	String createFlowJob(String flowModel);
+	String createFlowJob(String flowModelId,String userId,String channel);
 	
 	/**
-	 * 获取待处理订单审核流程任务
-	 * 
+	 * 通过流程任务审批用户id从任务池中获取任务
 	 * @param userId
+	 * @return
 	 */
-	void listPendingReviewTask(String userId);
+	List<FlowTask> listFlowTaskFromPool(String userId);
 
 	/**
 	 * 认领待处理订单审核流程任务
@@ -32,7 +36,7 @@ public interface FlowService {
 	 * @param userId
 	 * @param taskId
 	 */
-	void claimReviewTask(String userId, String taskId);
+	void receiveFlowTask(String userId, String taskId);
 
 	/**
 	 * 自动认领待处理订单审核流程任务
@@ -40,7 +44,7 @@ public interface FlowService {
 	 * @param userId
 	 * @param taskId
 	 */
-	void automaticClaimReviewTask(String userId);
+	void autoReceiveFlowTask(String userId);
 
 	/**
 	 * 提交订单审核流程任务处理结果
@@ -48,7 +52,7 @@ public interface FlowService {
 	 * @param result
 	 *            订单审核流程任务处理结果
 	 */
-	void submitReviewTaskResult(ReviewResult result);
+	void submitApprovalResult(ApprovalResult approvalResult);
 	
 	void cancelFlowJob(String jobId);
 }
