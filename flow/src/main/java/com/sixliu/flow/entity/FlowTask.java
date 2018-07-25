@@ -2,6 +2,8 @@ package com.sixliu.flow.entity;
 
 import java.util.Date;
 
+import com.sixliu.flow.TaskStatus;
+
 import lombok.Data;
 
 /**

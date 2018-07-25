@@ -18,6 +18,8 @@ import lombok.EqualsAndHashCode;
  * 	1.基础配置
  * 	2.申请配置
  * 	3.账户配置
+ * 
+ *  已经贷款申请拒绝后策略:同类产品永久拒绝，同类产品拒绝后n天(黑名单管理)
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

@@ -2,6 +2,7 @@ package com.sixliu.flow.component;
 
 import java.util.List;
 
+import com.sixliu.flow.entity.FlowInputDataModel;
 import com.sixliu.flow.entity.FlowJob;
 import com.sixliu.flow.entity.FlowJobModel;
 import com.sixliu.flow.entity.FlowTask;
@@ -97,4 +98,6 @@ public interface FlowStorage {
 	FlowTask getFlowTask(String flowTaskId);
 	
 	void updateFlowTask(FlowTask flowTask);
+	
+	List<FlowInputDataModel> listFlowInputDataModel(String flowJobModelId,String flowTaskModelId);
 }

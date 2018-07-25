@@ -1,7 +1,9 @@
 package com.sixliu.flow.service;
 
 import java.util.List;
+import java.util.Map;
 
+import com.sixliu.flow.entity.FlowInputData;
 import com.sixliu.flow.entity.FlowTask;
 
 /**
@@ -46,6 +48,8 @@ public interface FlowService {
 	 */
 	void autoReceiveFlowTask(String userId);
 
+	
+	void additionalInputData(String flowJoblId,String flowTasklId,Map<String,FlowInputData> flowInputDatas);
 	/**
 	 * 提交订单审核流程任务处理结果
 	 * 

@@ -1,4 +1,4 @@
-package com.sixliu.flow.entity;
+package com.sixliu.flow;
 /**
 *@author:MG01867
 *@date:2018年7月6日

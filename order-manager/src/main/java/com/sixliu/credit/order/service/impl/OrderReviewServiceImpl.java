@@ -1,10 +1,12 @@
 package com.sixliu.credit.order.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
 import com.sixliu.credit.order.service.OrderReviewService;
+import com.sixliu.flow.entity.FlowInputData;
 import com.sixliu.flow.entity.FlowTask;
 import com.sixliu.flow.service.ApprovalResult;
 
@@ -43,6 +45,12 @@ public class OrderReviewServiceImpl implements OrderReviewService{
 	}
 
 	@Override
+	public void additionalInputData(String flowJoblId, String flowTasklId, Map<String, FlowInputData> flowInputDatas) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
 	public void submitApprovalResult(ApprovalResult approvalResult) {
 		// TODO Auto-generated method stub
 		
@@ -53,7 +61,5 @@ public class OrderReviewServiceImpl implements OrderReviewService{
 		// TODO Auto-generated method stub
 		
 	}
-
-
-
+	
 }

@@ -1,6 +1,6 @@
 package com.sixliu.flow.service;
 
-import com.sixliu.flow.entity.TaskStatus;
+import com.sixliu.flow.TaskStatus;
 
 import lombok.Data;
 

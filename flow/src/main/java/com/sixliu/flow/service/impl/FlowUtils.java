@@ -2,12 +2,12 @@ package com.sixliu.flow.service.impl;
 
 import java.util.Date;
 
+import com.sixliu.flow.JobStatus;
+import com.sixliu.flow.TaskStatus;
 import com.sixliu.flow.entity.FlowJob;
 import com.sixliu.flow.entity.FlowJobModel;
 import com.sixliu.flow.entity.FlowTask;
 import com.sixliu.flow.entity.FlowTaskModel;
-import com.sixliu.flow.entity.JobStatus;
-import com.sixliu.flow.entity.TaskStatus;
 
 /**
  * @author:MG01867

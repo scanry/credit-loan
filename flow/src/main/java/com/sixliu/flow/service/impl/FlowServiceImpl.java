@@ -1,15 +1,18 @@
 package com.sixliu.flow.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
+import com.sixliu.flow.TaskStatus;
+import com.sixliu.flow.TaskStatus.FlowTaskModelGetter;
 import com.sixliu.flow.component.FlowStorage;
 import com.sixliu.flow.component.IdGenerator;
+import com.sixliu.flow.entity.FlowInputData;
+import com.sixliu.flow.entity.FlowInputDataModel;
 import com.sixliu.flow.entity.FlowJob;
 import com.sixliu.flow.entity.FlowJobModel;
 import com.sixliu.flow.entity.FlowTask;
 import com.sixliu.flow.entity.FlowTaskModel;
-import com.sixliu.flow.entity.TaskStatus;
-import com.sixliu.flow.entity.TaskStatus.FlowTaskModelGetter;
 import com.sixliu.flow.entity.TaskType;
 import com.sixliu.flow.entity.User;
 import com.sixliu.flow.service.ApprovalResult;
@@ -64,6 +67,28 @@ public class FlowServiceImpl implements FlowService {
 	@Override
 	public void autoReceiveFlowTask(String userId) {
 		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void additionalInputData(String flowJoblId, String flowTasklId, Map<String,FlowInputData> flowInputDatas) {
+		FlowJob flowJob = getAndCheckFlowJob(flowJoblId);
+		FlowTask flowTask = getAndCheckFlowTask(flowTasklId);
+		List<FlowInputDataModel> flowInputDataModels = flowStorage.listFlowInputDataModel(flowJob.getFlowJobModelId(),
+				flowTask.getFlowTaskModelId());
+		if (null == flowInputDataModels || flowInputDataModels.isEmpty()) {
+			throw new IllegalArgumentException(String.format(
+					"The flowTask[%s] of flowJob[%s] didn't config flowInputDataModel", flowTasklId, flowJoblId));
+		}
+		if (null == flowInputDatas || flowInputDatas.isEmpty()) {
+			throw new IllegalArgumentException(String.format(
+					"Please provide inputDatas when the flowTask[%s] of flowJob[%s] config flowInputDataModel",
+					flowTasklId, flowJoblId));
+		}
+		flowInputDataModels.forEach(flowInputDataModel->{
+			flowInputDataModel.getInputName();
+			flowInputDatas.get("");
+		});
 
 	}
 
@@ -124,5 +149,4 @@ public class FlowServiceImpl implements FlowService {
 		}
 		return flowTask;
 	}
-
 }

@@ -1,7 +1,10 @@
-package com.sixliu.flow.entity;
+package com.sixliu.flow;
 
 import java.util.Date;
 
+import com.sixliu.flow.entity.FlowJob;
+import com.sixliu.flow.entity.FlowTask;
+import com.sixliu.flow.entity.FlowTaskModel;
 import com.sixliu.flow.service.ApprovalResult;
 import com.sixliu.flow.service.impl.FlowUtils;
 
