@@ -6,9 +6,9 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 import com.sixliu.credit.order.service.OrderReviewService;
+import com.sixliu.flow.ApprovalResult;
 import com.sixliu.flow.entity.FlowInputData;
 import com.sixliu.flow.entity.FlowTask;
-import com.sixliu.flow.service.ApprovalResult;
 
 /**
 *@author:MG01867

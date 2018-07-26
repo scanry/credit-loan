@@ -1,6 +1,8 @@
 package com.sixliu.flow.entity;
 
 
+import java.util.List;
+
 import lombok.Data;
 
 /**
@@ -18,4 +20,7 @@ public class FlowJobModel {
 	
 	/**流程作业模型name**/
 	private String name;
+	
+	/**流程作业任务模型id**/
+	private List<String> FlowTaskModelIds;
 }

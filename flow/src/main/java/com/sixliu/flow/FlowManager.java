@@ -1,21 +1,33 @@
-package com.sixliu.flow.service;
+package com.sixliu.flow;
 
 import java.util.List;
 import java.util.Map;
 
 import com.sixliu.flow.entity.FlowInputData;
+import com.sixliu.flow.entity.FlowJobModel;
 import com.sixliu.flow.entity.FlowTask;
+import com.sixliu.flow.entity.FlowTaskModel;
 
 /**
 *@author:MG01867
 *@date:2018年7月6日
 *@E-mail:359852326@qq.com
 *@version:
-*@describe //TODO
+*@describe 流程管理
 */
-public interface FlowService {
+public interface FlowManager {
 
+	/**
+	 * 增加流程任务模型
+	 * @param flowTaskModel
+	 */
+	void addFlowTaskModel(FlowTaskModel flowTaskModel);
 	
+	/**
+	 * 增加流程作业模型
+	 * @param flowTaskModel
+	 */
+	void addFlowJobModel(FlowJobModel flowJobModel);
 	/**
 	 * 创建流程作业
 	 * @param flowModelId

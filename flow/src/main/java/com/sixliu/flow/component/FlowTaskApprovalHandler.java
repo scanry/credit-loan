@@ -1,6 +1,6 @@
 package com.sixliu.flow.component;
 
-import com.sixliu.flow.service.ApprovalResult;
+import com.sixliu.flow.ApprovalResult;
 
 /**
  * @author:MG01867

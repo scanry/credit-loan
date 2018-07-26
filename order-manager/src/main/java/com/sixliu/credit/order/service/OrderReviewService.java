@@ -1,6 +1,6 @@
 package com.sixliu.credit.order.service;
 
-import com.sixliu.flow.service.FlowService;
+import com.sixliu.flow.FlowManager;
 
 /**
  * @author:MG01867
@@ -9,6 +9,6 @@ import com.sixliu.flow.service.FlowService;
  * @version:
  * @describe 订单审核流程任务服务
  */
-public interface OrderReviewService extends FlowService{
+public interface OrderReviewService extends FlowManager{
 	
 }

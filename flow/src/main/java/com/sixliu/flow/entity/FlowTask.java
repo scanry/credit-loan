@@ -40,8 +40,14 @@ public class FlowTask {
 	/**流程作业任务自动处理class**/
 	private String autoHandlerClass;
 	
+	/**流程作业任务提交前切面handler class**/
+	private String flowTaskBeforeSubmitAopClass;
+	
+	/**流程作业任务提交后切面handler class**/
+	private String flowTaskAfterSubmitAopClass;
+	
 	/**流程作业任务所处状态**/
-	private TaskStatus status;
+	private TaskStatus status=TaskStatus.NONE;
 	
 	/**流程作业任务内部意见**/
 	private String innerOpinion;

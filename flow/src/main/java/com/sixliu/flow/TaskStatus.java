@@ -2,11 +2,10 @@ package com.sixliu.flow;
 
 import java.util.Date;
 
+import com.sixliu.flow.core.FlowUtils;
 import com.sixliu.flow.entity.FlowJob;
 import com.sixliu.flow.entity.FlowTask;
 import com.sixliu.flow.entity.FlowTaskModel;
-import com.sixliu.flow.service.ApprovalResult;
-import com.sixliu.flow.service.impl.FlowUtils;
 
 import lombok.NonNull;
 
@@ -19,6 +18,16 @@ import lombok.NonNull;
  */
 public enum TaskStatus {
 
+	NONE() {
+		@Override
+		public FlowTask process(@NonNull FlowJob flowJob, @NonNull FlowTask flowTask,
+				@NonNull ApprovalResult approvalResult, @NonNull FlowTaskModelGetter flowTaskModelGetter) {
+			throw new UnsupportedOperationException(
+					String.format("No operation is supported when the flowTask[%s]'s status[%s] of flowJob[%s]",
+							flowTask.getId(),NONE, flowJob.getId()));
+		}
+	},
+	
 	/** 待认领 **/
 	POOLING() {
 		@Override
@@ -88,7 +97,7 @@ public enum TaskStatus {
 				@NonNull ApprovalResult approvalResult, @NonNull FlowTaskModelGetter flowTaskModelGetter) {
 			throw new UnsupportedOperationException(
 					String.format("No operation is supported when the flowTask[%s]'s status[%s] of flowJob[%s]",
-							flowTask.getId(), flowTask.getStatus(), flowJob.getId()));
+							flowTask.getId(), PASS, flowJob.getId()));
 		}
 	},
 	/** 拒绝 **/
@@ -98,7 +107,7 @@ public enum TaskStatus {
 				@NonNull ApprovalResult approvalResult, @NonNull FlowTaskModelGetter flowTaskModelGetter) {
 			throw new UnsupportedOperationException(
 					String.format("No operation is supported when the flowTask[%s]'s status[%s] of flowJob[%s]",
-							flowTask.getId(), flowTask.getStatus(), flowJob.getId()));
+							flowTask.getId(), REJECT, flowJob.getId()));
 		}
 	},
 	/** 挂起 **/
@@ -120,7 +129,7 @@ public enum TaskStatus {
 				@NonNull ApprovalResult approvalResult, @NonNull FlowTaskModelGetter getNextFlowTaskModel) {
 			throw new UnsupportedOperationException(
 					String.format("No operation is supported when the flowTask[%s]'s status[%s] of flowJob[%s]",
-							flowTask.getId(), flowTask.getStatus(), flowJob.getId()));
+							flowTask.getId(), OVERRULE, flowJob.getId()));
 		}
 	};
 

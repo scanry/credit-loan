@@ -1,4 +1,4 @@
-package com.sixliu.flow.service.impl;
+package com.sixliu.flow.core;
 
 import java.util.Date;
 

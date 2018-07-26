@@ -1,6 +1,4 @@
-package com.sixliu.flow.service;
-
-import com.sixliu.flow.TaskStatus;
+package com.sixliu.flow;
 
 import lombok.Data;
 
@@ -14,6 +12,9 @@ import lombok.Data;
 @Data
 public class ApprovalResult {
 
+	/**流程作业id**/
+	private String flowJobId;
+	
 	/**流程作业任务id**/
 	private String flowTaskId;
 	
