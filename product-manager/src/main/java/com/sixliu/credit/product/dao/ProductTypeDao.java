@@ -2,7 +2,7 @@ package com.sixliu.credit.product.dao;
 
 import java.util.List;
 
-import com.sixliu.credit.product.entity.ProductType;
+import com.sixliu.credit.product.entity.ProductTypeConfig;
 
 /**
 *@author:MG01867
@@ -13,9 +13,9 @@ import com.sixliu.credit.product.entity.ProductType;
 */
 public interface ProductTypeDao {
 
-	ProductType getById(String id);
+	ProductTypeConfig getById(String id);
 	
-	List<ProductType> listAll();
+	List<ProductTypeConfig> listAll();
 	
-	int insert(ProductType productType);
+	int insert(ProductTypeConfig productType);
 }

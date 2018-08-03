@@ -14,7 +14,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ProductApplyFormConfig extends BaseEntity {
+public class ApplicationFormConfig extends BaseEntity {
 
 	/** 客户id:VARCHAR(36) **/
 	private String customerId;

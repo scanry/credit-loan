@@ -2,7 +2,7 @@ package com.sixliu.credit.product.dao;
 
 import java.util.List;
 
-import com.sixliu.credit.product.entity.ProductAttributeConfig;
+import com.sixliu.credit.product.entity.ProductExtendedAttribute;
 
 /**
 *@author:MG01867
@@ -18,7 +18,7 @@ public interface ProductAttributeConfigDao {
 	 * @param productId  产品id
 	 * @return
 	 */
-	List<ProductAttributeConfig> listByProductId(String productId);
+	List<ProductExtendedAttribute> listByProductId(String productId);
 	
-	int insert(ProductAttributeConfig productAttributeConfig);
+	int insert(ProductExtendedAttribute productAttributeConfig);
 }

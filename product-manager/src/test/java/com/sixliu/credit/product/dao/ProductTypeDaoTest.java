@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sixliu.credit.product.BaseTest;
 import com.sixliu.credit.product.dao.ProductTypeDao;
-import com.sixliu.credit.product.entity.ProductType;
+import com.sixliu.credit.product.entity.ProductTypeConfig;
 
 /**
  * @author:MG01867
@@ -27,7 +27,7 @@ public class ProductTypeDaoTest extends BaseTest {
 
 	@Test
 	public void testInsert() {
-		ProductType productType=new ProductType();
+		ProductTypeConfig productType=new ProductTypeConfig();
 		productType.setId(UUID.randomUUID().toString());
 		productType.setName("居乐贷"+System.currentTimeMillis());
 		productType.setParentId(null);
@@ -46,10 +46,10 @@ public class ProductTypeDaoTest extends BaseTest {
 	
 	@Test
 	public void testGetById() {
-		List<ProductType> result=productTypeDao.listAll();
+		List<ProductTypeConfig> result=productTypeDao.listAll();
 		if(null!=result&&result.size()>0) {
-			ProductType item=result.get(0);
-			ProductType getByIdResult=productTypeDao.getById(item.getId());
+			ProductTypeConfig item=result.get(0);
+			ProductTypeConfig getByIdResult=productTypeDao.getById(item.getId());
 			assertNotNull(getByIdResult);
 		}else {
 			assertFalse(false);

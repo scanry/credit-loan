@@ -46,6 +46,9 @@ public class ProductConfig extends BaseEntity {
 	/**是否支持申请多次:INT(1)**/
 	private Integer applyMultiple;
 	
+	/**是否关联客户基础额度:INT(1)**/
+	private Integer linkCustomerBaseQuota;
+	
 	/**是否循环额度:INT(1)**/
 	private Integer loopQuota;
 	
@@ -55,11 +58,29 @@ public class ProductConfig extends BaseEntity {
 	/**是否支持降低额度:INT(1)**/
 	private Integer decreaseQuota;
 	
-	/**贷款期限类型:INT(1)**/
-	private Integer loanTermType;
+	/** 最小授信额度**/
+	private Integer minCreditQuota;
+
+	/** 最大授信额度 **/
+	private Integer maxCreditQuota;
 	
-	/**贷款期限:INT(4)**/
-	private Integer loanTerm;
+	/**授信有效月数**/
+	private Integer creditEffectiveMonths;
+	
+	/** 最小单笔贷款金额:VARCHAR(20) **/
+	private Integer minSingleLoanAmount;
+
+	/** 最大单笔贷款金额:VARCHAR(20) **/
+	private Integer maxSingleLoanAmount;
+	
+	/** 单笔贷款期限类型(1:月,2:天):INT(1) **/
+	private Integer singleLoanDurationType;
+	
+	/** 最小单笔贷款期限(数量):INT(3) **/
+	private Integer minSingleLoanDuration;
+
+	/** 最大单笔贷款期限(数量):INT(3) **/
+	private Integer maxSingleLoanDuration;
 	
 	/**生效日期:TIMESTAMP**/
 	private Date effectiveDate;

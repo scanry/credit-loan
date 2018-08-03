@@ -7,17 +7,18 @@ import lombok.EqualsAndHashCode;
 
 /**
  * @author:MG01867
- * @date:2018年6月15日
+ * @date:2018年7月30日
  * @E-mail:359852326@qq.com
  * @version:
- * @describe 产品类型
+ * @describe 额度配置
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ProductType extends BaseEntity {
+public class QuotaConfig extends BaseEntity {
+	
+	/** 最小授信额度:INT(11) **/
+	private Integer minCreditQuota;
 
-	/** 产品父类型数据id:VARCHAR(36)**/
-	private String parentId;
-	/** 产品类型名称:VARCHAR(20)**/
-	private String name;
+	/** 最大授信额度:INT(11) **/
+	private Integer maxCreditQuota;
 }

@@ -9,13 +9,15 @@ import lombok.EqualsAndHashCode;
  * @date:2018年6月15日
  * @E-mail:359852326@qq.com
  * @version:
- * @describe 贷款产品配置副本
+ * @describe 产品快照
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ProductConfigCopy extends ProductConfig {
+public class ProductConfigSnapshot extends ProductConfig {
 
-	/**原始产品编码:VARCHAR**/
+	/**原始产品编码**/
 	private String originalId;
 
+	/**原始产品版本**/
+	private Integer originalVersion;
 }
