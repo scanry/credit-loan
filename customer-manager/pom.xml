@@ -9,7 +9,7 @@
 		<artifactId>credit-loan</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>customer-manager</artifactId>
+	<artifactId>customer-manager-service</artifactId>
 	<name>customer-manager</name>
 	<url>http://maven.apache.org</url>
 	<properties>

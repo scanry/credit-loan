@@ -1,6 +1,7 @@
 package com.sixliu.credit.product.entity;
 
 import com.sixliu.credit.common.entity.BaseEntity;
+import com.sixliu.credit.product.constant.QuotaUseageType;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,9 +17,18 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class QuotaConfig extends BaseEntity {
 	
-	/** 最小授信额度:INT(11) **/
-	private Integer minCreditQuota;
+	/**名称**/
+	private String name;
+	
+	/**产品id**/
+	private String productId;
 
-	/** 最大授信额度:INT(11) **/
-	private Integer maxCreditQuota;
+	/**用途**/
+	private QuotaUseageType type;
+	
+	/**占用授信额度比例**/
+	private Double ratio;
+	
+	/**风险级**/
+	private Integer riskLevel;
 }

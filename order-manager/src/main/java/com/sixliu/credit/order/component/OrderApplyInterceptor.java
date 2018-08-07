@@ -1,6 +1,6 @@
 package com.sixliu.credit.order.component;
 
-import com.sixliu.credit.order.dto.OrderApplyFormDTO;
+import com.sixliu.credit.order.dto.CreditApplyFormDTO;
 
 /**
 *@author:MG01867
@@ -12,5 +12,5 @@ import com.sixliu.credit.order.dto.OrderApplyFormDTO;
 @FunctionalInterface
 public interface OrderApplyInterceptor {
 
-	void preHandle(OrderApplyFormDTO orderApplyForm);
+	void preHandle(CreditApplyFormDTO orderApplyForm);
 }

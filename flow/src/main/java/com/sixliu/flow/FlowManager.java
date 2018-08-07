@@ -71,4 +71,6 @@ public interface FlowManager {
 	void submitApprovalResult(ApprovalResult approvalResult);
 	
 	void cancelFlowJob(String jobId);
+	
+	void shutdown();
 }

@@ -193,4 +193,9 @@ public class FlowManagerImpl implements FlowManager {
 			return nextFlowTaskModel;
 		}
 	}
+
+	@Override
+	public void shutdown() {
+		
+	}
 }

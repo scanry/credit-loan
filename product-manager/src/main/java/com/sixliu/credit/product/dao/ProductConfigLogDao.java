@@ -3,7 +3,7 @@ package com.sixliu.credit.product.dao;
 import java.util.List;
 
 import com.sixliu.credit.product.entity.ProductConfig;
-import com.sixliu.credit.product.entity.ProductConfigLog;
+import com.sixliu.credit.product.entity.log.ProductConfigLog;
 
 /**
 *@author:MG01867
