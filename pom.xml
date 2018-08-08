@@ -5,13 +5,13 @@
 	<artifactId>credit-loan</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>loan</name>
-	<description>loan</description>
+	<name>credit-loan</name>
+	<description>credit-loan</description>
 
 	<modules>
 		<module>creditlimit-manager-api</module>
+		<module>creditlimit-manager-service</module>
 		<module>customer-manager-api</module>
-		<module>customer-manager-service</module>
 		<module>product-manager-api</module>
 		<module>product-manager-service</module>
 		<module>order-manager-api</module>
@@ -30,7 +30,6 @@
 		<module>flow</module>
     	<module>core-base</module>
    		<module>core-service</module>
-   		<module>creditlimit-manager-service</module>
   </modules>
 
 	<properties>

@@ -31,10 +31,10 @@
 
 		<dependency>
 			<groupId>com.sixliu</groupId>
-			<artifactId>quota-manager-api</artifactId>
+			<artifactId>creditlimit-manager-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>com.sixliu</groupId>
 			<artifactId>customer-manager-api</artifactId>

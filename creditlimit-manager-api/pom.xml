@@ -9,7 +9,7 @@
 		<artifactId>credit-loan</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>quota-manager-api</artifactId>
+	<artifactId>creditlimit-manager-api</artifactId>
 	<name>creditlimit-manager-api</name>
 	<url>http://maven.apache.org</url>
 	<properties>
