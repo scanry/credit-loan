@@ -1,3 +1,0 @@
-该目录用于存放bootstrap组件的第三方插件
-API:
-table地址：http://www.html580.com/?Ou4SZy5J

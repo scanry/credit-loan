@@ -21,10 +21,7 @@
 		<module>payment-manager</module>
 		<module>notice-manager</module>
 		<module>journal-manager</module>
-		<module>afterloan-manager</module>
-		<module>beforeloan-manager</module>
 		<module>applyloan-manager</module>
-		<module>operate-manager</module>
 		<module>fund-manager</module>
 		<module>common</module>
 		<module>flow</module>
