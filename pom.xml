@@ -9,6 +9,11 @@
 	<description>credit-loan</description>
 
 	<modules>
+		<module>user-manager-api</module>
+   		<module>user-manager-service</module>
+   		<module>payment-manager</module>
+		<module>notice-manager</module>
+		<module>journal-manager</module>
 		<module>creditlimit-manager-api</module>
 		<module>creditlimit-manager-service</module>
 		<module>customer-manager-api</module>
@@ -16,18 +21,14 @@
 		<module>product-manager-service</module>
 		<module>order-manager-api</module>
 		<module>order-manager-service</module>
-		<module>user-manager</module>
 		<module>account-manager</module>
-		<module>payment-manager</module>
-		<module>notice-manager</module>
-		<module>journal-manager</module>
 		<module>applyloan-manager</module>
 		<module>fund-manager</module>
 		<module>common</module>
 		<module>flow</module>
     	<module>core-base</module>
    		<module>core-service</module>
-  </modules>
+	</modules>
 
 	<properties>
 		<java.version>1.8</java.version>
