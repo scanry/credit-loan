@@ -26,7 +26,8 @@ public class NoticeServiceImpl implements NoticeService{
 	
 	@Override
 	public void send(NoticeMessageDTO message) {
-		
+		System.out.println(noticeMessageTemplateDao);
+		System.out.println(noticeMessageDao);
 	}
 
 }
