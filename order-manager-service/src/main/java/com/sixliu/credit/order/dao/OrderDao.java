@@ -2,7 +2,7 @@ package com.sixliu.credit.order.dao;
 
 import java.util.List;
 
-import com.sixliu.credit.order.entity.Order;
+import com.sixliu.credit.order.entity.CreditOrder;
 
 /**
 *@author:MG01867
@@ -13,9 +13,11 @@ import com.sixliu.credit.order.entity.Order;
 */
 public interface OrderDao {
 
-	Order getOrderById(String orderId);
+	int insert(CreditOrder creditOrder);
 	
-	List<Order> listOrderByCustomerId(String customerId);
+	CreditOrder getOrderById(String orderId);
+	
+	List<CreditOrder> listOrderByCustomerId(String customerId);
 	
 	int delById(String orderId);
 }

@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.sixliu.credit.common.dto.Response;
-import com.sixliu.credit.core.credit.check.Context;
-import com.sixliu.credit.core.credit.check.CreditPreCheck;
-import com.sixliu.credit.core.credit.check.CreditPreCheckException;
+import com.sixliu.credit.core.base.credit.check.Context;
+import com.sixliu.credit.core.base.credit.check.CreditPreCheck;
+import com.sixliu.credit.core.base.credit.check.CreditPreCheckException;
 import com.sixliu.credit.customer.CustomerDTO;
 import com.sixliu.credit.order.OrderMutexDTO;
 import com.sixliu.credit.order.api.OrderManagerClient;

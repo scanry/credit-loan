@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sixliu.credit.common.dto.Response;
 import com.sixliu.credit.common.dto.ResponseUtils;
-import com.sixliu.credit.order.OrderDTO;
+import com.sixliu.credit.order.CreateCreditOrderDTO;
 import com.sixliu.credit.order.OrderMutexDTO;
 import com.sixliu.credit.order.api.OrderManagerClient;
 import com.sixliu.credit.order.dto.CreditApplyFormDTO;
-import com.sixliu.credit.order.entity.Order;
+import com.sixliu.credit.order.entity.CreditOrder;
 import com.sixliu.credit.order.service.OrderService;
 
 /**
@@ -40,11 +40,11 @@ public class OrderServiceController implements OrderManagerClient {
 
 	@RequestMapping(value = "/getOrder", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
 	@Override
-	public Response<OrderDTO> getOrder(@RequestParam(required = true) String orderId) {
-		Order order = orderService.getOrderById(orderId);
-		OrderDTO result = null;
+	public Response<CreateCreditOrderDTO> getOrder(@RequestParam(required = true) String orderId) {
+		CreditOrder order = orderService.getOrderById(orderId);
+		CreateCreditOrderDTO result = null;
 		if (null != order) {
-			result = new OrderDTO();
+			result = new CreateCreditOrderDTO();
 			BeanUtils.copyProperties(order, result);
 		}
 		return ResponseUtils.succeed(result);
@@ -52,7 +52,7 @@ public class OrderServiceController implements OrderManagerClient {
 
 	@RequestMapping(value = "/createOrder", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
 	@Override
-	public Response<String> createOrder(@RequestBody @Validated OrderDTO order) {
+	public Response<String> createOrder(@RequestBody @Validated CreateCreditOrderDTO order) {
 		return ResponseUtils.succeed(orderService.createOrder(order));
 	}
 

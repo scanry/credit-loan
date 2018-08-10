@@ -1,7 +1,7 @@
 package com.sixliu.credit.order.api;
 
 import com.sixliu.credit.common.dto.Response;
-import com.sixliu.credit.order.OrderDTO;
+import com.sixliu.credit.order.CreateCreditOrderDTO;
 import com.sixliu.credit.order.OrderMutexDTO;
 
 /**
@@ -18,14 +18,14 @@ public interface OrderManagerClient {
 	 * @param order
 	 * @return	返回订单id
 	 */
-	Response<OrderDTO> getOrder(String orderId);
+	Response<CreateCreditOrderDTO> getOrder(String orderId);
 	
 	/**
 	 * 创建授信申请订单
 	 * @param order
 	 * @return	返回订单id
 	 */
-	Response<String> createOrder(OrderDTO order);
+	Response<String> createOrder(CreateCreditOrderDTO order);
 	
 	/**
 	 * 是否有互斥的订单

@@ -1,7 +1,7 @@
 package com.sixliu.credit.core.credit.service;
 
 
-import com.sixliu.credit.core.credit.CreditApplyDTO;
+import com.sixliu.credit.core.base.credit.CreditApplyDTO;
 
 /**
  * @author:MG01867
