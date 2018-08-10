@@ -2,7 +2,7 @@ package com.sixliu.credit.product.service;
 
 import java.util.List;
 
-import com.sixliu.credit.product.dto.ProductDTO;
+import com.sixliu.credit.product.ProductInnerDTO;
 import com.sixliu.credit.product.entity.ProductConfig;
 
 /**
@@ -14,9 +14,11 @@ import com.sixliu.credit.product.entity.ProductConfig;
 */
 public interface ProductConfigService {
 
-	ProductConfig getById(String id);
+	ProductConfig getById(String productId);
+	
+	String generateProductSnapshot(String productId);
 	
 	ProductConfig getByCode(String code);
 	
-	List<ProductDTO> listForAllApplied();
+	List<ProductInnerDTO> listForAllApplied();
 }

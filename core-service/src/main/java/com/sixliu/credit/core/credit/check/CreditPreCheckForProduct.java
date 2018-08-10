@@ -7,8 +7,8 @@ import com.sixliu.credit.core.base.credit.CreditApplyDTO;
 import com.sixliu.credit.core.base.credit.check.Context;
 import com.sixliu.credit.core.base.credit.check.CreditPreCheck;
 import com.sixliu.credit.core.base.credit.check.CreditPreCheckException;
-import com.sixliu.credit.product.ProductDTO;
-import com.sixliu.credit.product.api.ProductManagerClient;
+import com.sixliu.credit.product.ProductInnerDTO;
+import com.sixliu.credit.product.api.ProductManagerInnerClient;
 import com.sixliu.credit.quota.CreditlimitDTO;
 import com.sixliu.credit.quota.api.QuotaManagerClient;
 
@@ -23,7 +23,7 @@ import com.sixliu.credit.quota.api.QuotaManagerClient;
 public class CreditPreCheckForProduct implements CreditPreCheck {
 
 	@Autowired
-	private ProductManagerClient productManagerClient;
+	private ProductManagerInnerClient productManagerClient;
 
 	@Autowired
 	private QuotaManagerClient quotaManagerClient;
@@ -31,7 +31,7 @@ public class CreditPreCheckForProduct implements CreditPreCheck {
 	@Override
 	public void check(Context context) {
 		CreditApplyDTO creditApplyDTO=context.getCreditApply();
-		ProductDTO productDTO = productManagerClient.get(creditApplyDTO.getProductId());
+		ProductInnerDTO productDTO = productManagerClient.get(creditApplyDTO.getProductId());
 		if (null == productDTO) {
 			throw new CreditPreCheckException(
 					String.format("The product[%s] is non-existent", creditApplyDTO.getProductId()));

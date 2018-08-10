@@ -9,18 +9,27 @@
         <id column="name" property="name" jdbcType="VARCHAR" />
         <id column="type_id" property="typeId" jdbcType="INTEGER" />
         <id column="priority" property="priority" jdbcType="INTEGER" />
-        <id column="apply_mutex_for_all" property="applyMutexForAll" jdbcType="INTEGER" />
-        <id column="apply_mutex_for_similar" property="applyMutexForSimilar" jdbcType="INTEGER" />
-        <id column="apply_multiple" property="applyMultiple" jdbcType="INTEGER" />
-        <id column="loop_quota" property="loopQuota" jdbcType="INTEGER" />
-        <id column="increase_quota" property="increaseQuota" jdbcType="INTEGER" />
-        <id column="decrease_quota" property="decreaseQuota" jdbcType="INTEGER" />
-        <id column="loanTerm_type" property="loanTermType" jdbcType="INTEGER" />
-        <id column="loan_term" property="loanTerm" jdbcType="INTEGER" />
+        <id column="credit_apply_mutex_type" property="creditApplyMutexType" jdbcType="com.sixliu.credit.product.CreditApplyMutexType" />
+        <id column="use_blacklist_group_id" property="useBlacklistGroupId" jdbcType="VARCHAR" />
+        <id column="link_customer_baseQuota" property="linkCustomerBaseQuota" jdbcType="BOOLEAN" />
+        <id column="credit_apply_max_months" property="creditApplyMaxMonths" jdbcType="INTEGER" />
+        <id column="credit_apply_flow_modle_Id" property="creditApplyFlowModleId" jdbcType="VARCHAR" />
+        <id column="credit_apply_reject_influence_days" property="creditApplyRejectInfluenceDays" jdbcType="INTEGER" />
+        <id column="loop_creditlimit" property="loopCreditlimit" jdbcType="BOOLEAN" />
+        <id column="increase_creditlimit" property="increaseCreditlimit" jdbcType="BOOLEAN" />
+        <id column="decrease_creditlimit" property="decreaseCreditlimit" jdbcType="BOOLEAN" />
+        <id column="min_creditlimit" property="minCreditlimit" jdbcType="INTEGER" />
+        <id column="max_creditlimit" property="maxCreditlimit" jdbcType="INTEGER" />
+        <id column="creditlimit_effective_months" property="creditlimitEffectiveMonths" jdbcType="INTEGER" />
+        <id column="min_single_loan_amount" property="minSingleLoanAmount" jdbcType="INTEGER" />
+        <id column="max_single_loan_amount" property="maxSingleLoanAmount" jdbcType="INTEGER" />
+        <id column="loan_term_type" property="loanTermType" jdbcType="INTEGER" />
+        <id column="min_single_loan_term" property="minSingleLoanTerm" jdbcType="INTEGER" />
+        <id column="max_single_loan_term" property="minSingleLoanTerm" jdbcType="INTEGER" />
+        <id column="loan_flow_modle_id" property="loanFlowModleId" jdbcType="VARCHAR" />
+        <id column="effective" property="effective" jdbcType="BOOLEAN" />
         <id column="effective_date" property="effectiveDate" jdbcType="DATE" />
-        <id column="expire_date" property="expireDate" jdbcType="DATE" />        
-        <id column="effective" property="effective" jdbcType="INTEGER" />
-        <id column="apply_description" property="applyDescription" jdbcType="VARCHAR" />        
+        <id column="expire_date" property="expireDate" jdbcType="DATE" />            
         <result column="remarks" property="remarks" jdbcType="VARCHAR" />
         <result column="version" property="version" jdbcType="INTEGER" />
         <result column="is_deleted" property="deleted" jdbcType="INTEGER" />
@@ -46,18 +55,27 @@
 	        `name`						`name`,
 	        type_id						typeId,
 	        `priority`  				`priority`,
-	        apply_mutex_for_all			applyMutexForAll,
-	        apply_mutex_for_similar		applyMutexForSimilar,
-	        apply_multiple				applyMultiple,
-	        loop_quota					loopQuota,
-	        increase_quota				increaseQuota,
-	        decrease_quota				decreaseQuota,
-	        loanTerm_type       		loanTermType,
-	        loan_term					loanTerm,
+	        credit_apply_mutex_type		credit_apply_mutex_type,
+	        use_blacklist_group_id		use_blacklist_group_id,
+	        link_customer_baseQuota		link_customer_baseQuota,
+	        credit_apply_max_months     credit_apply_max_months,
+	        credit_apply_flow_modle_Id  credit_apply_flow_modle_Id,
+	        credit_apply_reject_influence_days  credit_apply_reject_influence_days,
+	        loop_creditlimit            loop_creditlimit,
+	        increase_creditlimit        increase_creditlimit,
+	        decrease_creditlimit        decrease_creditlimit,
+			min_creditlimit				min_creditlimit,
+			max_creditlimit				max_creditlimit,
+			creditlimit_effective_months creditlimit_effective_months,
+			min_single_loan_amount		min_single_loan_amount,
+			max_single_loan_amount		max_single_loan_amount,
+			loan_term_type				loan_term_type,
+	        min_single_loan_term		min_single_loan_term,
+	        max_single_loan_term		max_single_loan_term,
+	        loan_flow_modle_id  		loan_flow_modle_id,
 	        effective_date				effectiveDate,
 	        expire_date					expireDate,
 	        effective					effective,
-	        apply_description			apply_description,
 	        `remarks`		    		`remarks`,
 	        `version`           		`version`,
 	        owner_id  	        		ownerId,
@@ -71,7 +89,7 @@
     <sql id="insert_common_column">
     	insert into product_config(`id`,`code`,`name`,type_id,`priority`,apply_mutex_for_all,apply_mutex_for_similar,
     	 							apply_multiple,loop_quota,increase_quota,decrease_quota,loanTerm_type,loan_term,
-    	 							effective_date,expire_date,effective,apply_description,
+    	 							effective_date,expire_date,effective,
     	 							`remarks`,owner_id,update_user_id,create_user_id)
     </sql>
 
@@ -79,7 +97,7 @@
     <sql id="insert_common_column_value">
     	values(#{id},#{code},#{name},#{typeId},#{priority},#{applyMutexForAll},#{applyMutexForSimilar},
     		   #{applyMultiple},#{loopQuota},#{increaseQuota},#{decreaseQuota},#{loanTermType},
-    		   #{loanTerm},#{effectiveDate},#{expireDate},#{effective},#{applyDescription},
+    		   #{loanTerm},#{effectiveDate},#{expireDate},#{effective},
     		   #{remarks},#{ownerId},#{updateUserId},#{createUserId})
     </sql>
     

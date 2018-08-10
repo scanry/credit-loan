@@ -10,7 +10,7 @@ import lombok.Data;
  * @describe //TODO
  */
 @Data
-public class ProductDTO {
+public class ProductInnerDTO {
 
 	/** 产品编码:VARCHAR(20) **/
 	private String id;

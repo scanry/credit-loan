@@ -9,7 +9,7 @@ import com.sixliu.credit.core.base.credit.check.CreditPreCheck;
 import com.sixliu.credit.core.base.credit.check.CreditPreCheckException;
 import com.sixliu.credit.customer.CustomerDTO;
 import com.sixliu.credit.customer.api.CustomerManagerClient;
-import com.sixliu.credit.product.ProductDTO;
+import com.sixliu.credit.product.ProductInnerDTO;
 import com.sixliu.credit.quota.CreditlimitDTO;
 import com.sixliu.credit.quota.api.QuotaManagerClient;
 
@@ -32,7 +32,7 @@ public class CreditPreCheckForCustomer implements CreditPreCheck {
 	@Override
 	public void check(Context context) {
 		CreditApplyDTO creditApplyDTO = context.getCreditApply();
-		ProductDTO product = context.getProduct();
+		ProductInnerDTO product = context.getProduct();
 		CustomerDTO customer = customerManagerClient.getAndHitBlacklist(creditApplyDTO.getCustomerId(),
 				product.getBlacklistGroupId());
 		if (null == customer) {

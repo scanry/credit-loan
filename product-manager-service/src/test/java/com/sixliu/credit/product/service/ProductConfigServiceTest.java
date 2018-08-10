@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sixliu.credit.product.BaseTest;
-import com.sixliu.credit.product.dto.ProductDTO;
+import com.sixliu.credit.product.ProductInnerDTO;
 
 /**
 *@author:MG01867
@@ -24,7 +24,7 @@ public class ProductConfigServiceTest extends BaseTest {
 
 	@Test
 	public void testInsert() {
-		List<ProductDTO> list=productConfigService.listForAllApplied();
+		List<ProductInnerDTO> list=productConfigService.listForAllApplied();
 		log.info("", list);
 		assertFalse(false);
 	}

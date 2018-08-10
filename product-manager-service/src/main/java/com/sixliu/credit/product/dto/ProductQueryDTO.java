@@ -3,6 +3,7 @@ package com.sixliu.credit.product.dto;
 import java.util.Date;
 
 import com.sixliu.credit.common.dto.PageQueryRequest;
+import com.sixliu.credit.product.ProductInnerDTO;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,7 +17,7 @@ import lombok.EqualsAndHashCode;
 */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ProductQueryDTO extends PageQueryRequest<ProductDTO>{
+public class ProductQueryDTO extends PageQueryRequest<ProductInnerDTO>{
 
 	private String name;
 	private String type;

@@ -1,6 +1,6 @@
 package com.sixliu.credit.product.api;
 
-import com.sixliu.credit.product.ProductDTO;
+import com.sixliu.credit.product.ProductInnerDTO;
 
 /**
  * @author:MG01867
@@ -9,7 +9,7 @@ import com.sixliu.credit.product.ProductDTO;
  * @version:
  * @describe //TODO
  */
-public interface ProductManagerClient {
+public interface ProductManagerInnerClient {
 
 	/**
 	 * 通过产品id获取产品
@@ -17,7 +17,7 @@ public interface ProductManagerClient {
 	 * @param productId
 	 * @return
 	 */
-	ProductDTO get(String productId);
+	ProductInnerDTO get(String productId);
 
 	/**
 	 * 生成产品快照

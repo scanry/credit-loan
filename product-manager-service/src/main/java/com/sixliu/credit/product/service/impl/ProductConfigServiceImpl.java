@@ -4,12 +4,16 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sixliu.credit.common.exception.IllegalArgumentAppException;
+import com.sixliu.credit.product.ProductInnerDTO;
 import com.sixliu.credit.product.dao.ProductConfigDao;
-import com.sixliu.credit.product.dto.ProductDTO;
+import com.sixliu.credit.product.dao.ProductConfigSnapshotDao;
 import com.sixliu.credit.product.entity.ProductConfig;
+import com.sixliu.credit.product.entity.snapshot.ProductConfigSnapshot;
 import com.sixliu.credit.product.service.ProductConfigService;
 
 /**
@@ -27,19 +31,36 @@ public class ProductConfigServiceImpl implements ProductConfigService{
 	@Autowired
 	private ProductConfigDao productConfigDao;
 	
+	@Autowired
+	private ProductConfigSnapshotDao productConfigSnapshotDao;
+	
 	@Override
-	public List<ProductDTO> listForAllApplied() {
+	public List<ProductInnerDTO> listForAllApplied() {
 		return null;
 	}
 
 	@Override
-	public ProductConfig getById(String id) {
-		return productConfigDao.getById(id);
+	public ProductConfig getById(String productId) {
+		return productConfigDao.getById(productId);
 	}
 
 	@Override
 	public ProductConfig getByCode(String code) {
 		return productConfigDao.getByCode(code);
+	}
+
+	@Override
+	public String generateProductSnapshot(String productId) {
+		ProductConfig productConfig=productConfigDao.getById(productId);
+		if(null==productConfig) {
+			throw new IllegalArgumentAppException(String.format("The product[%s] is illegal", productId));
+		}
+		ProductConfigSnapshot productConfigSnapshot=new ProductConfigSnapshot();
+		BeanUtils.copyProperties(productConfig, productConfigSnapshot);
+		productConfigSnapshot.setId(null);
+		productConfigSnapshot.setOriginalId(productConfig.getId());
+		productConfigSnapshotDao.insert(productConfigSnapshot);
+		return productConfigSnapshot.getId();
 	}
 
 }

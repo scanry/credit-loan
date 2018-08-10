@@ -11,7 +11,7 @@ import com.sixliu.credit.customer.CustomerDTO;
 import com.sixliu.credit.order.OrderMutexDTO;
 import com.sixliu.credit.order.api.OrderManagerClient;
 import com.sixliu.credit.product.CreditApplyMutexType;
-import com.sixliu.credit.product.ProductDTO;
+import com.sixliu.credit.product.ProductInnerDTO;
 
 /**
  * @author:MG01867
@@ -28,7 +28,7 @@ public class CreditPreCheckForMutex implements CreditPreCheck {
 
 	@Override
 	public void check(Context context) {
-		ProductDTO product = context.getProduct();
+		ProductInnerDTO product = context.getProduct();
 		CustomerDTO customer = context.getCustomer();
 		boolean pass = true;
 		if (CreditApplyMutexType.NONE != product.getCreditApplyMutexType()) {

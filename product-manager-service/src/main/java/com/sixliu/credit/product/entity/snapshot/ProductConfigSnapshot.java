@@ -19,7 +19,4 @@ public class ProductConfigSnapshot extends ProductConfig {
 
 	/**原始产品编码**/
 	private String originalId;
-
-	/**原始产品版本**/
-	private Integer originalVersion;
 }

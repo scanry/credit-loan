@@ -15,13 +15,19 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>com.sixliu</groupId>
 			<artifactId>common</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>com.sixliu</groupId>
+			<artifactId>product-manager-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -41,7 +47,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jetty</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -63,7 +69,6 @@
 			<artifactId>druid</artifactId>
 		</dependency>
 		<!-- db mybatis -->
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
