@@ -4,8 +4,8 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sixliu.credit.order.BaseTest;
-import com.sixliu.credit.order.client.ProductManagerInnerClient;
 import com.sixliu.credit.product.ProductInnerDTO;
+import com.sixliu.credit.product.api.ProductManagerInnerClient;
 
 
 /**

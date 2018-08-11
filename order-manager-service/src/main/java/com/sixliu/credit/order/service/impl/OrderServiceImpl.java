@@ -26,6 +26,7 @@ public class OrderServiceImpl implements OrderService {
 
 	private OrderDao orderDao;
 
+	@Autowired
 	private ProductManagerInnerClient productManagerClient;
 
 	private FlowManager flowManager;

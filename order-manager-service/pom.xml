@@ -16,6 +16,13 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
+	
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
 		<dependency>
 			<groupId>com.sixliu</groupId>
 			<artifactId>common</artifactId>
@@ -97,20 +104,13 @@
 		</dependency>
 
 		<dependency>
-			<groupId>io.github.openfeign</groupId>
-			<artifactId>feign-okhttp</artifactId>
-		</dependency>
-		
-		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 
-
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<scope>provided</scope>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-archaius</artifactId>
 		</dependency>
 
 		<!-- db mybatis -->
@@ -125,7 +125,6 @@
 			<artifactId>druid</artifactId>
 		</dependency>
 		<!-- db mybatis -->
-
 
 		<dependency>
 			<groupId>org.apache.curator</groupId>
