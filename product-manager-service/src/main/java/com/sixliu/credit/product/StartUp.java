@@ -3,7 +3,7 @@ package com.sixliu.credit.product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @version:
  * @describe //TODO
  */
-@SpringBootApplication
+@SpringCloudApplication
 public class StartUp implements WebMvcConfigurer {
 
 	final static Logger log = LoggerFactory.getLogger(StartUp.class);
