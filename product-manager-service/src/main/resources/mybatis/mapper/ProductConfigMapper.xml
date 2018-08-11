@@ -47,6 +47,8 @@
     	from product_config
     </sql>
     
+
+    
     <!-- 查询通用列 -->
     <sql id="select_common_column">
     	select 
@@ -168,6 +170,9 @@
     </select>
    
     <insert id="insert" parameterMap="ProductConfigParameter">
+    	<selectKey keyProperty="id" resultType="java.lang.String" order="BEFORE">
+              select uuid()
+    	</selectKey>
     	<include refid="insert_common_table"></include>
 	</insert> 
 	

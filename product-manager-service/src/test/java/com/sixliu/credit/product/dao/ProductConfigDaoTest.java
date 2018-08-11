@@ -29,7 +29,6 @@ public class ProductConfigDaoTest extends BaseTest {
 	@Test
 	public void testInsert() {
 		ProductConfig productConfig=new ProductConfig();
-		productConfig.setId(UUID.randomUUID().toString());
 		productConfig.setCode("JLD");
 		productConfig.setName("居乐贷"+System.currentTimeMillis());
 		productConfig.setTypeId("1");

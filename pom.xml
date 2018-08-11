@@ -10,7 +10,6 @@
 
 	<modules>
 		<module>user-manager-api</module>
-   		<module>user-manager-service</module>
    		<module>payment-manager</module>
 		<module>notice-manager</module>
 		<module>journal-manager</module>
