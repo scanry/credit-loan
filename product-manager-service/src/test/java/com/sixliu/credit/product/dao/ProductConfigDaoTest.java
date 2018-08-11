@@ -2,10 +2,15 @@ package com.sixliu.credit.product.dao;
 
 import static org.junit.Assert.assertTrue;
 
+import java.util.Date;
+import java.util.UUID;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.sixliu.credit.common.constant.LoanTermType;
 import com.sixliu.credit.product.BaseTest;
+import com.sixliu.credit.product.CreditApplyMutexType;
 import com.sixliu.credit.product.dao.ProductConfigDao;
 import com.sixliu.credit.product.entity.ProductConfig;
 
@@ -23,37 +28,46 @@ public class ProductConfigDaoTest extends BaseTest {
 
 	@Test
 	public void testInsert() {
-//		ProductConfig productConfig=new ProductConfig();
-//		productConfig.setId(UUID.randomUUID().toString());
-//		productConfig.setCode("JLD");
-//		productConfig.setName("居乐贷"+System.currentTimeMillis());
-//		productConfig.setTypeId("1");
-//		productConfig.setPriority(1);
-//		productConfig.setApplyMutexForAll(1);
-//		productConfig.setApplyMutexForSimilar(1);
-//		productConfig.setApplyMultiple(1);
-//		productConfig.setLoopQuota(1);
-//		productConfig.setIncreaseQuota(1);
-//		productConfig.setDecreaseQuota(1);
-//		productConfig.setLoanTermType(1);
-//		productConfig.setLoanTerm(36);
-//		productConfig.setEffectiveDate(new Date());
-//		productConfig.setExpireDate(new Date());
-//		productConfig.setEffective(true);
-//		productConfig.setApplyDescription("购房信息申请");
-//		productConfig.setRemarks("remarks");
-//		productConfig.setOwnerId("sixliu");
-//		productConfig.setCreateUserId("sixliu");
-//		productConfig.setUpdateUserId("sixliu");
-//		int result=productDao.insert(productConfig);
-//		assertTrue(1==result);
-//	}
-//
-//	@Test
-//	public void testGetById() {
-//		String id="aec8c173-17d9-40c3-aebc-8f8d2b6d014a";
-//		ProductConfig productConfig=productDao.getById(id);
-//		assertTrue(null==productConfig||null!=productConfig);
+		ProductConfig productConfig=new ProductConfig();
+		productConfig.setId(UUID.randomUUID().toString());
+		productConfig.setCode("JLD");
+		productConfig.setName("居乐贷"+System.currentTimeMillis());
+		productConfig.setTypeId("1");
+		productConfig.setPriority(1);
+		productConfig.setCreditApplyMutexType(CreditApplyMutexType.FOR_ALL);
+		productConfig.setUseBlacklistGroupId(UUID.randomUUID().toString());
+		productConfig.setLoopCreditlimit(true);
+		productConfig.setIncreaseCreditlimit(true);
+		productConfig.setDecreaseCreditlimit(true);
+		productConfig.setLinkCustomerBaseCreditlimit(true);
+		productConfig.setCreditApplyMaxMonths(3);
+		productConfig.setCreditApplyFlowModleId(UUID.randomUUID().toString());
+		productConfig.setCreditApplyRejectInfluenceDays(7);
+		productConfig.setMinCreditlimit(10000);
+		productConfig.setMaxCreditlimit(100000);
+		productConfig.setCreditlimitEffectiveMonths(36);
+		productConfig.setMinSingleLoanAmount(500);
+		productConfig.setMaxSingleLoanAmount(50000);
+		productConfig.setLoanTermType(LoanTermType.MONTH);
+		productConfig.setMinSingleLoanTerm(3);
+		productConfig.setMaxSingleLoanTerm(36);
+		productConfig.setLoanFlowModleId(UUID.randomUUID().toString());
+		productConfig.setEffective(false);
+		productConfig.setEffectiveDate(new Date());
+		productConfig.setExpireDate(new Date());
+		productConfig.setRemarks("remarks");
+		productConfig.setOwnerId("sixliu");
+		productConfig.setCreateUserId("sixliu");
+		productConfig.setUpdateUserId("sixliu");
+		int result=productDao.insert(productConfig);
+		assertTrue(1==result);
+	}
+
+	@Test
+	public void testGetById() {
+		String id="f7d60464-8011-4c54-8ee1-218aac4bf535";
+		ProductConfig productConfig=productDao.get(id);
+		assertTrue(null==productConfig||null!=productConfig);
 	}
 
 	@Test

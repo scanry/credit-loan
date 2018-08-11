@@ -41,7 +41,7 @@ public class ProductConfigServiceImpl implements ProductConfigService{
 
 	@Override
 	public ProductConfig getById(String productId) {
-		return productConfigDao.getById(productId);
+		return productConfigDao.get(productId);
 	}
 
 	@Override
@@ -51,7 +51,7 @@ public class ProductConfigServiceImpl implements ProductConfigService{
 
 	@Override
 	public String generateProductSnapshot(String productId) {
-		ProductConfig productConfig=productConfigDao.getById(productId);
+		ProductConfig productConfig=productConfigDao.get(productId);
 		if(null==productConfig) {
 			throw new IllegalArgumentAppException(String.format("The product[%s] is illegal", productId));
 		}

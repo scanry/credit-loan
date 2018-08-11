@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sixliu.credit.product.BaseTest;
-import com.sixliu.credit.product.dao.ProductTypeDao;
+import com.sixliu.credit.product.dao.ProductTypeConfigDao;
 import com.sixliu.credit.product.entity.ProductTypeConfig;
 
 /**
@@ -20,10 +20,10 @@ import com.sixliu.credit.product.entity.ProductTypeConfig;
  * @version:
  * @describe //TODO
  */
-public class ProductTypeDaoTest extends BaseTest {
+public class ProductTypeConfigDaoTest extends BaseTest {
 
 	@Autowired
-	ProductTypeDao productTypeDao;
+	ProductTypeConfigDao productTypeDao;
 
 	@Test
 	public void testInsert() {

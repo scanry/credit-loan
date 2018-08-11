@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.sixliu.credit.product.dao.ProductTypeDao" >
+<mapper namespace="com.sixliu.credit.product.dao.ProductTypeConfigDao" >
     <!-- 产品(product)属性和表字段映射 -->
-    <resultMap id="ProductTypeResult" type="com.sixliu.credit.product.entity.ProductType" >
+    <resultMap id="ProductTypeConfigResult" type="com.sixliu.credit.product.entity.ProductTypeConfig" >
         <id column="id" property="id" jdbcType="VARCHAR" />
         <result column="remarks" property="remarks" jdbcType="VARCHAR" />
         <result column="version" property="version" jdbcType="INTEGER" />
@@ -14,7 +14,7 @@
         <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
     </resultMap>
     
-    <parameterMap id="ProductTypeParameter" type="com.sixliu.credit.product.entity.ProductType"/>
+    <parameterMap id="ProductTypeConfigParameter" type="com.sixliu.credit.product.entity.ProductTypeConfig"/>
     
     <!-- 查询通用列 -->
     <sql id="select_common_column">
@@ -47,18 +47,18 @@
     	values(#{id},#{parentId},#{name},#{remarks},#{ownerId},#{updateUserId},#{createUserId})
     </sql>
     
-	<select id="getById" resultMap="ProductTypeResult" >
+	<select id="getById" resultMap="ProductTypeConfigResult" >
 		<include refid="select_common_column"></include>
 		<include refid="from_table"></include>
         where id =#{id}
     </select>
     
-    <select id="listAll" resultMap="ProductTypeResult" >
+    <select id="listAll" resultMap="ProductTypeConfigResult" >
 		<include refid="select_common_column"></include>
 		<include refid="from_table"></include>
     </select>
     
-    <insert id="insert" parameterMap="ProductTypeParameter">
+    <insert id="insert" parameterMap="ProductTypeConfigParameter">
     	<include refid="insert_common_product"></include>
 		<include refid="insert_common_column_value"></include> 
 	</insert>   

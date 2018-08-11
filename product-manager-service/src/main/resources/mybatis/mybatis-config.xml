@@ -48,5 +48,4 @@
 	<plugins>
 		<plugin interceptor="com.worldunion.access.common.persistence.interceptor.PaginationInterceptor" />
     </plugins> -->
-	
 </configuration>

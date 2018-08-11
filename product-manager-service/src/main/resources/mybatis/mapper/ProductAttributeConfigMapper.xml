@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.sixliu.credit.product.dao.ProductAttributeConfigDao" >
     <!-- 产品扩展属性配置和表字段映射 -->
-    <resultMap id="ProductAttributeConfig" type="com.sixliu.credit.product.entity.ProductAttributeConfig" >
+    <resultMap id="ProductAttributeConfig" type="com.sixliu.credit.product.entity.ProductExtendedAttribute" >
         <id column="id" property="id" jdbcType="VARCHAR" />
         <result column="owner_id" property="ownerEntityId" jdbcType="VARCHAR" />
         <result column="takeEffect" property="takeEffect" jdbcType="INTEGER" />

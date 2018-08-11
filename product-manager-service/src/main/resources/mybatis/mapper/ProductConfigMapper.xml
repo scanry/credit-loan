@@ -5,31 +5,31 @@
     
     <resultMap id="ProductConfigResult" type="com.sixliu.credit.product.entity.ProductConfig" >
         <id column="id" property="id" jdbcType="VARCHAR" />
-        <id column="code" property="code" jdbcType="VARCHAR" />
-        <id column="name" property="name" jdbcType="VARCHAR" />
-        <id column="type_id" property="typeId" jdbcType="INTEGER" />
-        <id column="priority" property="priority" jdbcType="INTEGER" />
-        <id column="credit_apply_mutex_type" property="creditApplyMutexType" jdbcType="com.sixliu.credit.product.CreditApplyMutexType" />
-        <id column="use_blacklist_group_id" property="useBlacklistGroupId" jdbcType="VARCHAR" />
-        <id column="link_customer_baseQuota" property="linkCustomerBaseQuota" jdbcType="BOOLEAN" />
-        <id column="credit_apply_max_months" property="creditApplyMaxMonths" jdbcType="INTEGER" />
-        <id column="credit_apply_flow_modle_Id" property="creditApplyFlowModleId" jdbcType="VARCHAR" />
-        <id column="credit_apply_reject_influence_days" property="creditApplyRejectInfluenceDays" jdbcType="INTEGER" />
-        <id column="loop_creditlimit" property="loopCreditlimit" jdbcType="BOOLEAN" />
-        <id column="increase_creditlimit" property="increaseCreditlimit" jdbcType="BOOLEAN" />
-        <id column="decrease_creditlimit" property="decreaseCreditlimit" jdbcType="BOOLEAN" />
-        <id column="min_creditlimit" property="minCreditlimit" jdbcType="INTEGER" />
-        <id column="max_creditlimit" property="maxCreditlimit" jdbcType="INTEGER" />
-        <id column="creditlimit_effective_months" property="creditlimitEffectiveMonths" jdbcType="INTEGER" />
-        <id column="min_single_loan_amount" property="minSingleLoanAmount" jdbcType="INTEGER" />
-        <id column="max_single_loan_amount" property="maxSingleLoanAmount" jdbcType="INTEGER" />
-        <id column="loan_term_type" property="loanTermType" jdbcType="INTEGER" />
-        <id column="min_single_loan_term" property="minSingleLoanTerm" jdbcType="INTEGER" />
-        <id column="max_single_loan_term" property="minSingleLoanTerm" jdbcType="INTEGER" />
-        <id column="loan_flow_modle_id" property="loanFlowModleId" jdbcType="VARCHAR" />
-        <id column="effective" property="effective" jdbcType="BOOLEAN" />
-        <id column="effective_date" property="effectiveDate" jdbcType="DATE" />
-        <id column="expire_date" property="expireDate" jdbcType="DATE" />            
+        <result column="code" property="code" jdbcType="VARCHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="type_id" property="typeId" jdbcType="INTEGER" />
+        <result column="priority" property="priority" jdbcType="INTEGER" />
+        <result column="credit_apply_mutex_type" property="creditApplyMutexType" jdbcType="INTEGER"/>
+        <result column="use_blacklist_group_id" property="useBlacklistGroupId" jdbcType="VARCHAR" />
+        <result column="loop_creditlimit" property="loopCreditlimit" jdbcType="BOOLEAN" />
+        <result column="increase_creditlimit" property="increaseCreditlimit" jdbcType="BOOLEAN" />
+        <result column="decrease_creditlimit" property="decreaseCreditlimit" jdbcType="BOOLEAN" />
+        <result column="link_customer_base_creditlimit" property="linkCustomerBaseCreditlimit" jdbcType="BOOLEAN" />
+        <result column="credit_apply_max_months" property="creditApplyMaxMonths" jdbcType="INTEGER" />
+        <result column="credit_apply_flow_modle_id" property="creditApplyFlowModleId" jdbcType="VARCHAR" />
+        <result column="credit_apply_reject_influence_days" property="creditApplyRejectInfluenceDays" jdbcType="INTEGER" />
+        <result column="min_creditlimit" property="minCreditlimit" jdbcType="INTEGER" />
+        <result column="max_creditlimit" property="maxCreditlimit" jdbcType="INTEGER" />
+        <result column="creditlimit_effective_months" property="creditlimitEffectiveMonths" jdbcType="INTEGER" />
+        <result column="min_single_loan_amount" property="minSingleLoanAmount" jdbcType="INTEGER" />
+        <result column="max_single_loan_amount" property="maxSingleLoanAmount" jdbcType="INTEGER" />
+        <result column="loan_term_type" property="loanTermType" jdbcType="INTEGER"/>
+        <result column="min_single_loan_term" property="minSingleLoanTerm" jdbcType="INTEGER" />
+        <result column="max_single_loan_term" property="minSingleLoanTerm" jdbcType="INTEGER" />
+        <result column="loan_flow_modle_id" property="loanFlowModleId" jdbcType="VARCHAR" />
+        <result column="effective" property="effective" jdbcType="BOOLEAN" />
+        <result column="effective_date" property="effectiveDate" jdbcType="DATE" />
+        <result column="expire_date" property="expireDate" jdbcType="DATE" />            
         <result column="remarks" property="remarks" jdbcType="VARCHAR" />
         <result column="version" property="version" jdbcType="INTEGER" />
         <result column="is_deleted" property="deleted" jdbcType="INTEGER" />
@@ -50,62 +50,112 @@
     <!-- 查询通用列 -->
     <sql id="select_common_column">
     	select 
-    		`id`			    		`id`,
-	        `code`              		`code`,
-	        `name`						`name`,
-	        type_id						typeId,
-	        `priority`  				`priority`,
-	        credit_apply_mutex_type		credit_apply_mutex_type,
-	        use_blacklist_group_id		use_blacklist_group_id,
-	        link_customer_baseQuota		link_customer_baseQuota,
-	        credit_apply_max_months     credit_apply_max_months,
-	        credit_apply_flow_modle_Id  credit_apply_flow_modle_Id,
-	        credit_apply_reject_influence_days  credit_apply_reject_influence_days,
-	        loop_creditlimit            loop_creditlimit,
-	        increase_creditlimit        increase_creditlimit,
-	        decrease_creditlimit        decrease_creditlimit,
-			min_creditlimit				min_creditlimit,
-			max_creditlimit				max_creditlimit,
-			creditlimit_effective_months creditlimit_effective_months,
-			min_single_loan_amount		min_single_loan_amount,
-			max_single_loan_amount		max_single_loan_amount,
-			loan_term_type				loan_term_type,
-	        min_single_loan_term		min_single_loan_term,
-	        max_single_loan_term		max_single_loan_term,
-	        loan_flow_modle_id  		loan_flow_modle_id,
-	        effective_date				effectiveDate,
-	        expire_date					expireDate,
-	        effective					effective,
-	        `remarks`		    		`remarks`,
-	        `version`           		`version`,
-	        owner_id  	        		ownerId,
-	        update_user_id	    		updateUserId,
-	        update_date					`updateDate`,
-	        create_user_id	    		createUserId,
-	        create_date					`createDate`
+    		`id`,
+	        `code`,
+	        `name`,
+	        type_id,
+	        `priority`,
+	        credit_apply_mutex_type,
+	        use_blacklist_group_id,
+	        loop_creditlimit,
+	        increase_creditlimit,
+	        decrease_creditlimit,
+	        link_customer_base_creditlimit,
+	        credit_apply_max_months,
+	        credit_apply_flow_modle_id,
+	        credit_apply_reject_influence_days,
+			min_creditlimit,
+			max_creditlimit,
+			creditlimit_effective_months,
+			min_single_loan_amount,
+			max_single_loan_amount,
+			loan_term_type,
+	        min_single_loan_term,
+	        max_single_loan_term,
+	        loan_flow_modle_id,
+	        effective,
+	        effective_date,
+	        expire_date,
+	        `remarks`,
+	        `version`,
+	        owner_id,
+	        update_user_id,
+	        update_date,
+	        create_user_id,
+	        create_date
     </sql>
     
     <!-- intsert to 表 -->
-    <sql id="insert_common_column">
-    	insert into product_config(`id`,`code`,`name`,type_id,`priority`,apply_mutex_for_all,apply_mutex_for_similar,
-    	 							apply_multiple,loop_quota,increase_quota,decrease_quota,loanTerm_type,loan_term,
-    	 							effective_date,expire_date,effective,
-    	 							`remarks`,owner_id,update_user_id,create_user_id)
+    <sql id="insert_common_table">
+    	insert into product_config(`id`,
+    								`code`,
+    								`name`,
+    								type_id,
+    								`priority`,
+    								credit_apply_mutex_type,
+    								use_blacklist_group_id,
+    								loop_creditlimit,
+    								increase_creditlimit,
+    								decrease_creditlimit,
+    								link_customer_base_creditlimit,
+    								credit_apply_max_months,
+    								credit_apply_flow_modle_Id,
+    								credit_apply_reject_influence_days,
+    								min_creditlimit,
+    								max_creditlimit,
+    								creditlimit_effective_months,
+    								min_single_loan_amount,
+    								max_single_loan_amount,
+    								loan_term_type,
+    								min_single_loan_term,
+    								max_single_loan_term,
+    								loan_flow_modle_id,
+  									effective,
+    	 							effective_date,
+    	 							expire_date,
+    	 							`remarks`,
+    	 							owner_id,
+    	 							update_user_id,
+    	 							create_user_id
+    	 							)
+    	 					 values(#{id},
+    	 							#{code},
+    	 							#{name},
+    	 							#{typeId},
+    	 							#{priority},
+    	 							#{creditApplyMutexType},
+    	 							#{useBlacklistGroupId},
+    	 							#{loopCreditlimit},
+    	 							#{increaseCreditlimit},
+    	 							#{decreaseCreditlimit},
+    	 							#{linkCustomerBaseCreditlimit},
+    	 							#{creditApplyMaxMonths},
+    	 							#{creditApplyFlowModleId},
+    	 							#{creditApplyRejectInfluenceDays},
+    	 							#{minCreditlimit},
+    	 							#{maxCreditlimit},
+    	 							#{creditlimitEffectiveMonths},
+    	 							#{minSingleLoanAmount},
+    	 							#{maxSingleLoanAmount},		
+    	 							#{loanTermType},
+    		   						#{minSingleLoanTerm},
+    		   						#{maxSingleLoanTerm},
+    		   						#{loanFlowModleId},
+    		   						#{effective},
+    		   						#{effectiveDate},
+    		   						#{expireDate},
+    		   						#{remarks},
+    		   						#{ownerId},
+    		   						#{updateUserId},
+    		   						#{createUserId}
+    		   						)
     </sql>
 
-    <!-- intsert to 表通用列取值 -->
-    <sql id="insert_common_column_value">
-    	values(#{id},#{code},#{name},#{typeId},#{priority},#{applyMutexForAll},#{applyMutexForSimilar},
-    		   #{applyMultiple},#{loopQuota},#{increaseQuota},#{decreaseQuota},#{loanTermType},
-    		   #{loanTerm},#{effectiveDate},#{expireDate},#{effective},
-    		   #{remarks},#{ownerId},#{updateUserId},#{createUserId})
-    </sql>
-    
     <sql id="delete_from_table">
     	delete from product_config
     </sql>
     
-	<select id="getById" resultMap="ProductConfigResult" >
+	<select id="get" resultMap="ProductConfigResult" >
 		<include refid="select_common_column"/>
 		<include refid="from_table"/>
         where `id` =#{id}
@@ -118,8 +168,7 @@
     </select>
    
     <insert id="insert" parameterMap="ProductConfigParameter">
-    	<include refid="insert_common_column"></include>
-		<include refid="insert_common_column_value"></include> 
+    	<include refid="insert_common_table"></include>
 	</insert> 
 	
 	<delete id="delById">

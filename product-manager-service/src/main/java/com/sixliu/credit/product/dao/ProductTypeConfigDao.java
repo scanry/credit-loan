@@ -11,7 +11,7 @@ import com.sixliu.credit.product.entity.ProductTypeConfig;
 *@version:
 *@describe //TODO
 */
-public interface ProductTypeDao {
+public interface ProductTypeConfigDao {
 
 	ProductTypeConfig getById(String id);
 	

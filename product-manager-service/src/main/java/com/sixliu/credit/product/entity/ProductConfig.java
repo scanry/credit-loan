@@ -46,8 +46,17 @@ public class ProductConfig extends BaseEntity {
 	/**使用黑名单组id**/
 	private String useBlacklistGroupId;
 	
+	/**是否循环额度:INT(1)**/
+	private Boolean loopCreditlimit;
+	
+	/**是否支持提高额度:INT(1)**/
+	private Boolean increaseCreditlimit;
+	
+	/**是否支持降低额度:INT(1)**/
+	private Boolean decreaseCreditlimit;
+	
 	/**是否关联客户基础额度:INT(1)**/
-	private Boolean linkCustomerBaseQuota;
+	private Boolean linkCustomerBaseCreditlimit;
 	
 	/**授信申请最大持续月数**/
 	private Integer creditApplyMaxMonths;
@@ -58,15 +67,6 @@ public class ProductConfig extends BaseEntity {
 	/**授信申请拒绝影响天数**/
 	private Integer creditApplyRejectInfluenceDays;
 
-	/**是否循环额度:INT(1)**/
-	private Boolean loopCreditlimit;
-	
-	/**是否支持提高额度:INT(1)**/
-	private Boolean increaseCreditlimit;
-	
-	/**是否支持降低额度:INT(1)**/
-	private Boolean decreaseCreditlimit;
-	
 	/** 最小授信额度**/
 	private Integer minCreditlimit;
 

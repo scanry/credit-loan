@@ -3,6 +3,7 @@ package com.sixliu.credit.product.config;
 import javax.sql.DataSource;
 
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.type.TypeHandler;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
@@ -18,6 +19,9 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 
+import com.sixliu.credit.common.constant.LoanTermType;
+import com.sixliu.credit.product.CreditApplyMutexType;
+
 /**
  * @author:MG01867
  * @date:2018年2月5日
@@ -30,7 +34,6 @@ public class MybatisBaseConfig implements TransactionManagementConfigurer {
 
 	private static Logger log = LoggerFactory.getLogger(MybatisBaseConfig.class);
 
-	private final static String typeAliasesPackage = "com.sixliu.product.repository.po";
 	private final static String mapperLocation = "classpath*:mybatis/mapper/*.xml";
 	private final static String configLocation = "classpath:mybatis/mybatis-config.xml";
 
@@ -43,7 +46,6 @@ public class MybatisBaseConfig implements TransactionManagementConfigurer {
 		log.debug("start configruing mybatis");
 		SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
 		bean.setDataSource(dataSource);
-		bean.setTypeAliasesPackage(typeAliasesPackage);
 		SqlSessionFactory sqlSessionFactory = null;
 		try {
 			// mapperLocationn=classpath*:mybatis/mapper/modules/*.xml
@@ -53,6 +55,8 @@ public class MybatisBaseConfig implements TransactionManagementConfigurer {
 			// configLocation=classpath:mybatis/mybatis-config.xml
 			Resource configLocationResource = new DefaultResourceLoader().getResource(configLocation);
 			bean.setConfigLocation(configLocationResource);
+			bean.setTypeHandlers(new TypeHandler[] { new CreditApplyMutexType.CreditApplyMutexTypeHandler(),
+					new LoanTermType.LoanTermTypeHandler() });
 			// bean.setPlugins(new Interceptor[]{pageHelper()});
 			sqlSessionFactory = bean.getObject();
 		} catch (Exception e) {

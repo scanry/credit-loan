@@ -18,7 +18,7 @@ public interface ProductConfigDao {
 	 * @param id  数据id
 	 * @return
 	 */
-	ProductConfig getById(String id);
+	ProductConfig get(String id);
 	
 	/**
 	 * 通过产品code获取数据
