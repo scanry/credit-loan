@@ -24,13 +24,10 @@ import com.sixliu.flow.FlowManager;
 @Service
 public class OrderServiceImpl implements OrderService {
 
-	@Autowired
 	private OrderDao orderDao;
 
-	@Autowired
 	private ProductManagerInnerClient productManagerClient;
 
-	@Autowired
 	private FlowManager flowManager;
 
 	@Override

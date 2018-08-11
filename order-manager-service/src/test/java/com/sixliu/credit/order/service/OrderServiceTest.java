@@ -4,6 +4,9 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sixliu.credit.order.BaseTest;
+import com.sixliu.credit.order.client.ProductManagerInnerClient;
+import com.sixliu.credit.product.ProductInnerDTO;
+
 
 /**
  * @author:MG01867
@@ -16,26 +19,13 @@ public class OrderServiceTest extends BaseTest {
 
 	@Autowired
 	OrderService orderService;
+	
+	@Autowired
+	ProductManagerInnerClient productManagerInnerClient;
 
 	@Test
 	public void testApply() {
-		// int loopCount = 100000;
-		//
-		// long startTime = System.currentTimeMillis();
-		// for (int i = 0; i < loopCount; i++) {
-		// OrderApplyFormDTO orderApplyFormDTO = new OrderApplyFormDTO();
-		// orderApplyFormDTO.setCustomerId("sixliu");
-		// orderService.cancel("1122");
-		// }
-		// long endTime = System.currentTimeMillis();
-		// System.out.println("apply lock time:" + (endTime - startTime));
-		// startTime = System.currentTimeMillis();
-		// for (int i = 0; i < loopCount; i++) {
-		// OrderApplyFormDTO orderApplyFormDTO = new OrderApplyFormDTO();
-		// orderApplyFormDTO.setCustomerId("sixliu");
-		// orderService.cancel1("1122");
-		// }
-		// endTime = System.currentTimeMillis();
-		// System.out.println("apply1 unlock time:" + (endTime - startTime));
+		ProductInnerDTO productInnerDTO=productManagerInnerClient.get("c43d00de-9d29-11e8-9e01-005056986f0b");
+		System.out.println(productInnerDTO);
 	}
 }

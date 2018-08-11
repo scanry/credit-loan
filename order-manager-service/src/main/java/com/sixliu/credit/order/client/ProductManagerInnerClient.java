@@ -1,4 +1,4 @@
-package com.sixliu.credit.product.api;
+package com.sixliu.credit.order.client;
 
 import javax.validation.constraints.NotBlank;
 
