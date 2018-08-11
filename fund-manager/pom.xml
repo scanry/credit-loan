@@ -9,8 +9,8 @@
 		<artifactId>credit-loan</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>fund-manager</artifactId>
-	<name>fund-manager</name>
+	<artifactId>fund-manager-service</artifactId>
+	<name>fund-manager-service</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -21,7 +21,7 @@
 		<module>order-manager-api</module>
 		<module>order-manager-service</module>
 		<module>account-manager</module>
-		<module>fund-manager</module>
+		<module>fund-manager-service</module>
 		<module>common</module>
 		<module>flow</module>
     	<module>core-base</module>
