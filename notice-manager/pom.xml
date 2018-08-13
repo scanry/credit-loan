@@ -9,8 +9,8 @@
 		<artifactId>credit-loan</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>notice-manager</artifactId>
-	<name>notice-manager</name>
+	<artifactId>notice-manager-service</artifactId>
+	<name>notice-manager-service</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

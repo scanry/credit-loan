@@ -7,8 +7,8 @@
     <artifactId>credit-loan</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>payment-manager</artifactId>
-  <name>payment-manager</name>
+  <artifactId>payment-manager-service</artifactId>
+  <name>payment-manager-service</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

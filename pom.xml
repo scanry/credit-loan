@@ -10,9 +10,8 @@
 
 	<modules>
 		<module>user-manager-api</module>
-   		<module>payment-manager</module>
-		<module>notice-manager</module>
-		<module>journal-manager</module>
+   		<module>payment-manager-service</module>
+		<module>notice-manager-service</module>
 		<module>creditlimit-manager-api</module>
 		<module>creditlimit-manager-service</module>
 		<module>customer-manager-api</module>
